@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2019_08_06_215353) do
 
-  create_table "posts", force: :cascade do |t|
-    t.integer "answer_id", null: false
+  create_table "answers", force: :cascade do |t|
+    t.integer "accepted_answer_id", null: false
     t.string "title", null: false
     t.string "post_link", null: false
     t.datetime "created_at", null: false
@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2019_08_06_215353) do
 
   create_table "searches", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "post_id"
+    t.integer "answer_id"
     t.string "tags", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_searches_on_post_id"
+    t.index ["answer_id"], name: "index_searches_on_answer_id"
     t.index ["user_id"], name: "index_searches_on_user_id"
   end
 
