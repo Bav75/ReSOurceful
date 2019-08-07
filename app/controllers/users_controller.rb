@@ -4,4 +4,26 @@ class UsersController < ApplicationController
     @user = User.new 
    end 
 
+   def create
+    @user = User.create(user_params)
+
+    if @user.persisted?
+        redirect_to user_path(@user)
+    else
+        #if user didn't persist - load errors to flash msg & redirect 
+        @user.errors.messages.each do |error_symbol, message|
+            flash[error_symbol] = "There appears to be an error: #{error_symbol} #{message[0]}"
+        end
+        redirect_to new_user_path
+    end
+
+   end 
+
+
+   private
+
+   def user_params
+    params.require(:user).permit(:name, :email, :password)
+   end
+
 end
