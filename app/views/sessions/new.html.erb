@@ -1,9 +1,5 @@
-<%# data validation errors if they exist %>
-<% if !flash.empty? %>
-    <% flash.each do |key, message| %>
-        <p><strong><%= "#{message}" %></p></strong>
-    <% end %>
-<% end %>
+<%# dispaly data validation errors if they exist %>
+<%= render 'layouts/validation_errors' %>
 
 <%# log in form %>
 <%= form_for(:session, url: login_path) do |f| %>

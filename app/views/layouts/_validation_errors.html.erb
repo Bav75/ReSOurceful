@@ -1,0 +1,5 @@
+<% if !flash.empty? %>
+    <% flash.each do |key, message| %>
+        <p><strong><%= "#{message}" %></p></strong>
+    <% end %>
+<% end %>
