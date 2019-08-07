@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.persisted?
+        session[:user_id] = @user.id 
         redirect_to user_path(@user)
     else
         #if user didn't persist - load errors to flash msg & redirect 
@@ -17,6 +18,10 @@ class UsersController < ApplicationController
         redirect_to new_user_path
     end
 
+   end
+
+   def show 
+    @user = User.find(session[:user_id].to_i)
    end 
 
 
