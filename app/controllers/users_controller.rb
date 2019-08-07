@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.persisted?
-        session[:user_id] = @user.id 
+        log_in(@user)
         redirect_to user_path(@user)
     else
         #if user didn't persist - load errors to flash msg & redirect 

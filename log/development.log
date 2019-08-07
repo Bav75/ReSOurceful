@@ -2312,3 +2312,75 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-07 14:52:42 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 200ms (Views: 195.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-07 14:52:51 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-08-07 14:52:57 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2vnzQ5yYD0NcLHqdz8+ykUo1CSc7NsUaE8iR3atZCt4nHlewtTYB+DlNN8zURAT8XjdU5+53m5leTDb6WbaRVQ==", "session"=>{"email"=>"bobe@test.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bobe@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 260ms (ActiveRecord: 29.6ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-07 14:52:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2019-08-07 14:53:02 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-07 14:53:12 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fzthCesK8Ni5tVC/4cyX84sW9JxOYM320Z8HW1NIxhCC3MX6wqT+Y9zUHe76RyGenxSpXJshk3WcG6B8oaddmw==", "user"=>{"name"=>"meme", "email"=>"meme@meme.com", "password"=>"[FILTERED]"}, "commit"=>"Enter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meme@meme.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Create (6.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "meme"], ["email", "meme@meme.com"], ["password_digest", "$2a$12$8S8VnNb7aSo4.AVrPpOVkeuV8semi/YQMiyFRh0CeoEA/8i1qOzd."], ["created_at", "2019-08-07 21:53:13.009019"], ["updated_at", "2019-08-07 21:53:13.009019"]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 232ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/users/5" for ::1 at 2019-08-07 14:53:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
