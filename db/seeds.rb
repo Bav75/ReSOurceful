@@ -8,7 +8,6 @@
 
 # Seed Users
 test_guy = User.new
-test_guy.name = "Bob"
+test_guy.username = "Bob_da_god"
 test_guy.password = "lolhax"
-test_guy.email = "lol@lol.com"
 test_guy.save 
