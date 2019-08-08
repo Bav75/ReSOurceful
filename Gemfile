@@ -26,9 +26,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Authentication system 
 gem 'omniauth'
 # StackExchange authorization strategy for Omniauth 
-gem 'omniauth-stackexchange'
+# gem 'omniauth-stackexchange'
+gem 'omniauth-stackexchange', git: 'https://github.com/nashby/omniauth-stackexchange.git'
 # handle environment setting automatically 
 gem 'dotenv-rails'
+# add https to server
+gem 'thin'
 
 
 group :development, :test do
