@@ -11,14 +11,15 @@ class SearchesController < ApplicationController
 
     def create
         tags = params[:search][:tags]
-        api_endpoint = 'api.stackexchange.com/2.2/search/advanced?order=desc&sort=votes&accepted=True&site=stackoverflow&tagged='
-        tags.each do |tag|
-            if tag == tags[tags.size - 1]
-                api_endpoint += "#{tag}"
-            else
-                api_endpoint += "#{tag};"
-            end
-        redirect_to api_endpoint
+        # api_endpoint = 'api.stackexchange.com/2.2/search/advanced?order=desc&sort=votes&accepted=True&site=stackoverflow&tagged='
+        # tags.each do |tag|
+        #     if tag == tags[tags.size - 1]
+        #         api_endpoint += "#{tag}"
+        #     else
+        #         api_endpoint += "#{tag};"
+        #     end
+        api = api_endpoint_builder(tags)
+        redirect_to api
         binding.pry 
     end
 

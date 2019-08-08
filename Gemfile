@@ -32,6 +32,8 @@ gem 'omniauth-stackexchange', git: 'https://github.com/nashby/omniauth-stackexch
 gem 'dotenv-rails'
 # add https to server
 gem 'thin'
+# make basic HTTP requests to StackExchange API 
+gem 'httparty'
 
 
 group :development, :test do
