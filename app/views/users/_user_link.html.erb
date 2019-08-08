@@ -2,3 +2,6 @@
 
 <%# GET /user/:id/edit link %>
 <%= link_to "Edit account details", edit_user_path(user) %>
+
+<%# log out link %>
+<%= link_to "Log out", "/logout", method: :delete %>

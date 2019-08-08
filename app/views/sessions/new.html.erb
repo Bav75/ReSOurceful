@@ -2,6 +2,7 @@
 <%= render 'layouts/validation_errors' %>
 
 <%# log in form %>
+<p>Login to ReSOurceful</p>
 <%= form_for(:session, url: login_path) do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username%>
@@ -18,6 +19,8 @@
     <%= f.submit 'Log in' %>
 <% end %>
 
-<%# link to sign up for new users %>
+<%# Oauth login link %>
+<p>Log in using <%= link_to "StackExchange", "/auth/stackexchange" %> </p>
 
+<%# link to sign up for new users %>
 <p>New to ReSOurceful? <%= link_to "Sign up here", new_user_path %> </p>

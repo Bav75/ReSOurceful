@@ -3661,3 +3661,136 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 239ms (Views: 235.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/login" for ::1 at 2019-08-08 12:02:09 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 259ms (Views: 253.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-08 12:06:02 -0700
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 12:06:21 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 12:06:45 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 264ms (Views: 259.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 12:07:30 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 252ms (Views: 247.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 12:09:12 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 267ms (Views: 261.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 12:09:14 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 12:09:14 -0700
+Started GET "/auth/stackexchange/callback?code=uVbXoiLB9V4cO*pDkBLVMg))&state=014369b04fe157ba129857be808ced1bedc43f8f58f7a365" for ::1 at 2019-08-08 12:09:15 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"uVbXoiLB9V4cO*pDkBLVMg))", "state"=>"014369b04fe157ba129857be808ced1bedc43f8f58f7a365", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-08 12:09:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (115.8ms)
+  Rendered users/show.html.erb within layouts/application (117.1ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `delete_session_path' for #<#<Class:0x00007f8ba41a88f8>:0x00007f8ba41b0b20>):
+    4: <%= link_to "Edit account details", edit_user_path(user) %>
+    5: 
+    6: <%# log out link %>
+    7: <%= link_to "Log out", delete_session_path(session) %>
+  
+app/views/users/_user_link.html.erb:7:in `_app_views_users__user_link_html_erb__3718519296829394233_70118865244060'
+app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb__2446262236741243482_70118865194340'
+Started GET "/login" for ::1 at 2019-08-08 12:12:51 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 290ms (Views: 284.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 12:12:52 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 12:12:53 -0700
+Started GET "/auth/stackexchange/callback?code=eu2FT7Y7r*FUw5VLs6(iUA))&state=17adf46c6019dd7d421e6e90b609bec87247c5fce641de47" for ::1 at 2019-08-08 12:12:53 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"eu2FT7Y7r*FUw5VLs6(iUA))", "state"=>"17adf46c6019dd7d421e6e90b609bec87247c5fce641de47", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-08 12:12:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-08 12:12:56 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GZt3ZOOFMjBQxwFxPna5bjEO5OpuIIfSmOA9LN/xFx/kfNOXyis8izWmTCAl/Q8DJQy5Krth2VHVZJoLLR6MlA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 12:12:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
