@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 
   ###app resources 
-  resources :users
+  resources :users do 
+    resources :searches
+  end
 
 end
