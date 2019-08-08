@@ -3937,3 +3937,363 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-08 15:07:13 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 305ms (Views: 299.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 15:07:15 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:07:18 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:07:18 -0700
+Started GET "/auth/stackexchange/callback?code=7YLg4xPBsEdNYISGu*EAQQ))&state=c3799bc30a8a5f9930b9f179ef2269047f515d0e2d6aacff" for ::1 at 2019-08-08 15:07:19 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"7YLg4xPBsEdNYISGu*EAQQ))", "state"=>"c3799bc30a8a5f9930b9f179ef2269047f515d0e2d6aacff", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-08 15:07:19 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:07:30 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:07:32 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (136.7ms)
+  Rendered searches/new.html.erb within layouts/application (139.0ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `searches_path' for #<#<Class:0x00007fd5ab678698>:0x00007fd5a7e467e8>
+Did you mean?  user_search_path):
+    1: 
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for search do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.input_field :tags, multiple: true %>
+    6:     <%= f.input_field :tags, multiple: true %>
+  
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___2777404852085797178_70277858100220'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__1714122179845169095_70277810763800'
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:11:21 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 57.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:11:23 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (228.1ms)
+  Rendered searches/new.html.erb within layouts/application (230.3ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `search' for #<#<Class:0x00007fd5ae2c79d8>:0x00007fd5a9396828>):
+    1: 
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for search do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.input_field :tags, multiple: true %>
+    6:     <%= f.input_field :tags, multiple: true %>
+  
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___2777404852085797178_70277822020520'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__1714122179845169095_70277821939660'
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:11:36 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:11:38 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (150.3ms)
+  Rendered searches/new.html.erb within layouts/application (151.1ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `input_field' for #<ActionView::Helpers::FormBuilder:0x00007fd5ab6ddef8>):
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for user do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.input_field :tags, multiple: true %>
+    6:     <%= f.input_field :tags, multiple: true %>
+    7: 
+    8:     <%= f.submit "Enter"%>
+  
+app/views/searches/_form.html.erb:5:in `block in _app_views_searches__form_html_erb___2777404852085797178_70277840426680'
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___2777404852085797178_70277840426680'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__1714122179845169095_70277858088520'
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:12:02 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:12:03 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (6.9ms)
+  Rendered searches/new.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for #<User:0x00007fd5a8ea80a0>):
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for user do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.text_field :tags, multiple: true %>
+    6:     <%= f.text_field :tags, multiple: true %>
+    7: 
+    8:     <%= f.submit "Enter"%>
+  
+app/views/searches/_form.html.erb:5:in `block in _app_views_searches__form_html_erb___2777404852085797178_70277823539780'
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___2777404852085797178_70277823539780'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__1714122179845169095_70277819370240'
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:13:16 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 18.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:13:18 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (10.5ms)
+  Rendered searches/new.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for #<User:0x00007fd5ab578d38>):
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for user do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.text_field :tags, multiple: true %>
+    6:     <%= f.text_field :tags, multiple: true %>
+    7: 
+    8:     <%= f.submit "Enter"%>
+  
+app/views/searches/_form.html.erb:5:in `block in _app_views_searches__form_html_erb___2777404852085797178_70277823343980'
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___2777404852085797178_70277823343980'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__1714122179845169095_70277839720920'
+Started GET "/login" for ::1 at 2019-08-08 15:13:45 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 250ms (Views: 239.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:13:47 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:13:47 -0700
+Started GET "/auth/stackexchange/callback?code=IfKRlv9Zf7fNtrOJuXBTmg))&state=a7ba8516c65f2bb498b922807447f643d144fa0683be1bd9" for ::1 at 2019-08-08 15:13:48 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"IfKRlv9Zf7fNtrOJuXBTmg))", "state"=>"a7ba8516c65f2bb498b922807447f643d144fa0683be1bd9", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 18ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-08 15:13:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:13:53 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:13:55 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (10.8ms)
+  Rendered searches/new.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for #<User:0x00007fac1a486688>):
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for user do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.text_field :tags, multiple: true %>
+    6:     <%= f.text_field :tags, multiple: true %>
+    7: 
+    8:     <%= f.submit "Enter"%>
+  
+app/views/searches/_form.html.erb:5:in `block in _app_views_searches__form_html_erb___3161277671593018393_70188576044580'
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___3161277671593018393_70188576044580'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__3858397635149181974_70188576025240'
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:17:50 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 24.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:17:51 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (8.6ms)
+  Rendered searches/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 43ms (Views: 29.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-08 15:18:10 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TeB+R2sPBukAYpr4qlZOOBRDlGRyz9QQRwDbe7lFlIXvSmi7g8ApfzcQTcz9fjHq46vV6HAVUtXI0mijBPoG/Q==", "search"=>{"tags"=>["python", "dictionary"]}, "commit"=>"Enter", "user_id"=>"1"}
+No template found for SearchesController#create, rendering head :no_content
+Completed 204 No Content in 314166ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-08 15:25:23 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 248ms (Views: 241.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:25:25 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-08 15:25:25 -0700
+Started GET "/auth/stackexchange/callback?code=ef74c4qwdsieL9G4*gpPtw))&state=06c1536c57c761fa09b551c4f515c2ae8e03823e014bf7cb" for ::1 at 2019-08-08 15:25:25 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ef74c4qwdsieL9G4*gpPtw))", "state"=>"06c1536c57c761fa09b551c4f515c2ae8e03823e014bf7cb", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-08 15:25:26 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-08 15:25:30 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-08 15:25:32 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (3.9ms)
+  Rendered searches/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 44ms (Views: 29.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-08 15:25:38 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQsuanntJlr4rTaeTdZF/GechY7q+pMkbx2dV7tE8A87oTiWkSIJzM/f4aoa/joukHTEAuggFeHgzy6PBvtidw==", "search"=>{"tags"=>["python", "dictionary"]}, "commit"=>"Enter", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/searches_controller.rb:13
+No template found for SearchesController#create, rendering head :no_content
+Completed 204 No Content in 1148635ms (ActiveRecord: 0.8ms)
+
+

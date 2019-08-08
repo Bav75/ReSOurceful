@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id].to_i)
    end 
 
+   def edit
+    binding.pry
+   end
+
 
    private
 

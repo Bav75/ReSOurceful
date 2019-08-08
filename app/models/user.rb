@@ -4,6 +4,8 @@ class User < ApplicationRecord
     has_many :searches
     has_many :answers, through: :searches
 
+    accepts_nested_attributes_for :searches
+
     validates :password, presence: true 
     # validates :name, presence: true 
     validates :username, presence: true, uniqueness: true

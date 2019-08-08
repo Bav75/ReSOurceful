@@ -1,0 +1,10 @@
+
+<%# partial for @search - search creation and editing %>
+<%= form_for [user, search] do |f| %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, multiple: true %>
+    <%= f.text_field :tags, multiple: true %>
+    <%= f.text_field :tags, multiple: true %>
+
+    <%= f.submit "Enter"%>
+<% end %>
