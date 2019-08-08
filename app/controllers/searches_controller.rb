@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-    
+require 'httparty'
     def index
         @searches = current_user.searches
     end
@@ -18,8 +18,8 @@ class SearchesController < ApplicationController
         #     else
         #         api_endpoint += "#{tag};"
         #     end
-        api = api_endpoint_builder(tags)
-        redirect_to api
+        url = api_endpoint_builder(tags)
+        response = HTTParty.get(url)
         binding.pry 
     end
 
