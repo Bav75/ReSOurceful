@@ -27,6 +27,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'omniauth'
 # StackExchange authorization strategy for Omniauth 
 gem 'omniauth-stackexchange'
+# handle environment setting automatically 
+gem 'dotenv-rails'
 
 
 group :development, :test do
