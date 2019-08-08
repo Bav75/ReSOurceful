@@ -3,22 +3,12 @@ class SessionsController < ApplicationController
     def new
     end
 
-    def create
-        binding.pry
-        
+    def create      
+        #StackExchange Oauth login   
         if auth_hash
-            @user = User.find_by(username: auth_hash['info']['nickname'])
-
-            if @user.nil?
-                @user = User.create(username: auth_hash['info']['nickname'], password: SecureRandom.hex)
-                log_in(@user)
-            else
-                log_in(@user)
-            end
-
+            @user = User.find_or_create_from_oauth(auth_hash)
+            log_in(@user)
             redirect_to user_path(@user)
-            # add securerandom.hex gem 
-
         # normal login with username / password 
         else 
             @user = User.find_by(username: params[:session][:username])
