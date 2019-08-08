@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+    #stackexchange authentication
+  get '/auth/stackexchange/callback', to: 'sessions#create'
+
 
   ###app resources 
   resources :users
