@@ -5247,3 +5247,103 @@ NoMethodError (undefined method `[]' for nil:NilClass):
 app/controllers/searches_controller.rb:21:in `block in create'
 app/controllers/searches_controller.rb:19:in `times'
 app/controllers/searches_controller.rb:19:in `create'
+Started GET "/login" for ::1 at 2019-08-09 12:18:55 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 238ms (Views: 232.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 12:18:57 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 12:18:58 -0700
+Started GET "/auth/stackexchange/callback?code=4(aYTEOCWHyAVUGkvDReOw))&state=c0670dc3525c26d57d248c3c45854dd1de9a39bd44974274" for ::1 at 2019-08-09 12:18:58 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4(aYTEOCWHyAVUGkvDReOw))", "state"=>"c0670dc3525c26d57d248c3c45854dd1de9a39bd44974274", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 12:18:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:19:02 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:19:07 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1997.6ms)
+Completed 200 OK in 2025ms (Views: 2020.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 12:19:11 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (7.7ms)
+  Rendered searches/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 12:19:14 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iYo3/Xgnb6oL3CNOX49FT/iy+ukNY5tYrqHbatdWW90rICEBkOhAPDyu9HoIpzqdD1q7ZQ+5HZ0hc2iyaunJpQ==", "search"=>{"tags"=>["lol", "", ""]}, "commit"=>"Enter", "user_id"=>"1"}
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (9.1ms)
+  Rendered searches/new.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%# partial for @search - search creation and editing %>
+    3: <%= form_for [user, search] do |f| %>
+    4:     <%= f.label :tags %>
+    5:     <%= f.text_field :tags, multiple: true %>
+    6:     <%= f.text_field :tags, multiple: true %>
+  
+app/views/searches/_form.html.erb:3:in `_app_views_searches__form_html_erb___3618493598897000846_70113397826500'
+app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__4444365114200461848_70113397304540'
+app/controllers/searches_controller.rb:20:in `create'
+  Rendered searches/index.html.erb within layouts/application (44113.3ms)
+Completed 200 OK in 44160ms (Views: 44145.3ms | ActiveRecord: 1.6ms)
+
+
