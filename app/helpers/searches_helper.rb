@@ -1,6 +1,7 @@
 module SearchesHelper
 
     def api_endpoint_builder(search_tags)
+        # didn't work until i explicitly added http to beginning of string 
         api_endpoint = 'http://api.stackexchange.com/2.2/search/advanced?order=desc&sort=votes&accepted=True&site=stackoverflow&tagged='
         search_tags.each do |tag|
             if tag == search_tags[search_tags.size - 1]

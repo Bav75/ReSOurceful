@@ -4460,3 +4460,296 @@ No template found for SearchesController#create, rendering head :no_content
 Completed 204 No Content in 132129ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2019-08-09 08:40:41 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 286ms (Views: 278.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 08:40:56 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 08:40:56 -0700
+Started GET "/auth/stackexchange/callback?code=r2WbwaC14izmJasagtPo(Q))&state=8300dc5a7592e1a2106be824caaa4fb84a94c9714d279928" for ::1 at 2019-08-09 08:40:56 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"r2WbwaC14izmJasagtPo(Q))", "state"=>"8300dc5a7592e1a2106be824caaa4fb84a94c9714d279928", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 21ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 08:40:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 28ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 08:41:06 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 56ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 08:41:10 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (9.8ms)
+  Rendered searches/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 48ms (Views: 32.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 08:42:04 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g3SQ17tG0k1qJJzMdso30zBE1cGLAAsX/d83vPBuMK8h3oYrU4n9211WS/gh4kgBx6yUTYnajdJyDYRkTdGi1w==", "search"=>{"tags"=>["javascript", "react", ""]}, "commit"=>"Enter", "user_id"=>"1"}
+No template found for SearchesController#create, rendering head :no_content
+Completed 204 No Content in 636019ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-09 10:38:48 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 243ms (Views: 237.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 10:38:50 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 10:38:50 -0700
+Started GET "/auth/stackexchange/callback?code=(WV9vJk6K4pC0ztBl5hO2w))&state=27cd3320fd816de247b26b4a1fd284c7fd6168b6c67ce495" for ::1 at 2019-08-09 10:38:50 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"(WV9vJk6K4pC0ztBl5hO2w))", "state"=>"27cd3320fd816de247b26b4a1fd284c7fd6168b6c67ce495", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 10:38:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 10:38:54 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 10:38:58 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (9.8ms)
+  Rendered searches/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 67ms (Views: 53.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 10:39:54 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dYJi9vPxsi42icXW3dtcKnbMsDk34RM8kS3Wf8G6F1vXKHQKGz6duAH7EuKK8yP4gSTxtTU7lfke/2WnfAWFIw==", "search"=>{"tags"=>["ruby", "arrays", ""]}, "commit"=>"Enter", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/searches_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):9
+  [1m[36mAnswer Create (3.5ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 1986398], ["title", "Check if a value exists in an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/1986386/check-if-a-value-exists-in-an-array-in-ruby"], ["created_at", "2019-08-09 17:45:17.372979"], ["updated_at", "2019-08-09 17:45:17.372979"]]
+  ↳ (pry):9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):20
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):20
+  [1m[36mSearch Create (1.2ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 1], ["tags", "[\"ruby\", \"arrays\", \"\"]"], ["created_at", "2019-08-09 17:48:44.508659"], ["updated_at", "2019-08-09 17:48:44.508659"]]
+  ↳ (pry):20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):20
+No template found for SearchesController#create, rendering head :no_content
+Completed 204 No Content in 546135ms (ActiveRecord: 9.1ms)
+
+
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/login" for ::1 at 2019-08-09 11:10:14 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 242ms (Views: 236.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 11:10:18 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 11:10:18 -0700
+Started GET "/auth/stackexchange/callback?code=idxDaRL8zaAoWnn7dL7Kqw))&state=ee80b25c3346f767c39bb01f64ab49f2ae03a51731ceb918" for ::1 at 2019-08-09 11:10:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"idxDaRL8zaAoWnn7dL7Kqw))", "state"=>"ee80b25c3346f767c39bb01f64ab49f2ae03a51731ceb918", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 11:10:19 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:10:22 -0700
+  
+SyntaxError (/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/controllers/searches_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+                tags: tags 
+                ^~~~
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/controllers/searches_controller.rb:39: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/searches_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/searches_controller.rb:39: syntax error, unexpected end, expecting end-of-input
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:10:43 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 11:10:48 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (17.1ms)
+  Rendered searches/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 49ms (Views: 36.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 11:11:07 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1PU+TK2U172s6xw6ze+McyI1MpkUUtx3dqouzr5DI5l2XyiwRVv4K5uZyw6ax/Oh1d1zFRaIWrL5eJ0WA/yx4Q==", "search"=>{"tags"=>["python", "dictionary", "sorting"]}, "commit"=>"Enter", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 613218], ["title", "How do I sort a dictionary by value?"], ["post_link", "https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value"], ["created_at", "2019-08-09 18:11:07.252438"], ["updated_at", "2019-08-09 18:11:07.252438"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 2], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-09 18:11:07.267024"], ["updated_at", "2019-08-09 18:11:07.267024"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 73050], ["title", "How do I sort a list of dictionaries by a value of the dictionary?"], ["post_link", "https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-a-value-of-the-dictionary"], ["created_at", "2019-08-09 18:11:31.720009"], ["updated_at", "2019-08-09 18:11:31.720009"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 3], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-09 18:11:31.730821"], ["updated_at", "2019-08-09 18:11:31.730821"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 9001529], ["title", "How can I sort a dictionary by key?"], ["post_link", "https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key"], ["created_at", "2019-08-09 18:11:47.804640"], ["updated_at", "2019-08-09 18:11:47.804640"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 4], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-09 18:11:47.809112"], ["updated_at", "2019-08-09 18:11:47.809112"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 364599], ["title", "In Python, how do I iterate over a dictionary in sorted key order?"], ["post_link", "https://stackoverflow.com/questions/364519/in-python-how-do-i-iterate-over-a-dictionary-in-sorted-key-order"], ["created_at", "2019-08-09 18:11:51.534398"], ["updated_at", "2019-08-09 18:11:51.534398"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 5], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-09 18:11:51.544329"], ["updated_at", "2019-08-09 18:11:51.544329"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 25480214], ["title", "Right way to initialize an OrderedDict using its constructor such that it retains order of initial data?"], ["post_link", "https://stackoverflow.com/questions/25480089/right-way-to-initialize-an-ordereddict-using-its-constructor-such-that-it-retain"], ["created_at", "2019-08-09 18:11:53.862328"], ["updated_at", "2019-08-09 18:11:53.862328"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 6], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-09 18:11:53.871652"], ["updated_at", "2019-08-09 18:11:53.871652"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+Redirected to http://localhost:3000/users/1/searches
+Completed 302 Found in 48590ms (ActiveRecord: 32.1ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:11:55 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.1ms)
+
+
