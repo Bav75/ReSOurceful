@@ -1,5 +1,8 @@
 
-<%= binding.pry %>
+<%# display data validation errors if they exist %>
+<%= render 'layouts/validation_errors' %>
+
+
 <%= link_to "Create a new search", new_user_search_path %>
 
 <%# render partial for most recent search if redirected from a new search form %>

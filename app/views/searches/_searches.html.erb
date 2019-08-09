@@ -1,11 +1,6 @@
-<p>Matches for answer with tags: <%=searches[0].tags%></p>
+<strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
 <ol>
     <% searches.each do |search| %>
-        <li><%= search.answer.title %>
-        <ul>
-            <li><%= search.answer.post_link %></li>
-        </ul>
-        <li>
-        <br>
+        <li><%= link_to search.answer.title, search.answer.post_link %></li>
     <% end %>
 </ol>
