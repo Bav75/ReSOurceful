@@ -29,11 +29,12 @@ require 'httparty'
             search.save
             # binding.pry
         end
-
+        binding.pry
+        # use request.referer
         redirect_to user_searches_path
     end
 
-    # will need to build both searches and associated answers within this create  method 
+    # will need to build both searches and associated answers within this create method 
     #stack exchange is a GET request so I can redirect within create method to access 
     
 end

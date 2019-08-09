@@ -1,0 +1,8 @@
+<p>Matches for answer with tags: <%=searches[0].tags%></p>
+<ol>
+    <% searches.each do |search| %>
+        <li><%= search.answer.title %><li>
+        <br>
+        <%= search.answer.post_link %>
+    <% end %>
+</ol>

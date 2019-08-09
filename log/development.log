@@ -4753,3 +4753,497 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.1ms)
 
 
+  [1m[36mSearch Load (1.8ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches"[0m
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+Started GET "/login" for ::1 at 2019-08-09 11:36:05 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 221ms (Views: 214.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 11:36:46 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-09 11:36:46 -0700
+Started GET "/auth/stackexchange/callback?code=Sn0zs1yZM03xAoDgGT5eZw))&state=4f8ffb900d8de172635bad979bff92f37484a186256f0f70" for ::1 at 2019-08-09 11:36:47 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"Sn0zs1yZM03xAoDgGT5eZw))", "state"=>"4f8ffb900d8de172635bad979bff92f37484a186256f0f70", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 18ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 11:36:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:36:49 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:36:53 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+Started GET "/" for ::1 at 2019-08-09 11:37:02 -0700
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/index.html.erb within layouts/application (428384.8ms)
+Completed 500 Internal Server Error in 428392ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for #<Array:0x00007f92b9b211e8>):
+    4: 
+    5: <%# render partial for most recent search %>
+    6: if 
+    7: <%= render 'searches', searches = Search.last(5)%>
+  
+app/views/searches/index.html.erb:7:in `_app_views_searches_index_html_erb___3196830627956464429_70134125547620'
+  [1m[36mSearch Load (6.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/index.html.erb within layouts/application (502604.0ms)
+Completed 500 Internal Server Error in 502626ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for #<Array:0x00007f92bf4c2ee0>):
+    4: 
+    5: <%# render partial for most recent search %>
+    6: if 
+    7: <%= render 'searches', searches = Search.all.last(5)%>
+  
+app/views/searches/index.html.erb:7:in `_app_views_searches_index_html_erb___3196830627956464429_70134125337740'
+Processing by StaticController#home as HTML
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:45:12 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.4ms)
+  Rendering searches/index.html.erb within layouts/application
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/index.html.erb within layouts/application (7208.5ms)
+Completed 500 Internal Server Error in 7214ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for #<Array:0x00007f92b9cfe768>):
+    4: 
+    5: <%# render partial for most recent search %>
+    6: if 
+    7: <%= render 'searches', searches = Search.all.last(5)%>
+  
+app/views/searches/index.html.erb:7:in `_app_views_searches_index_html_erb___3196830627956464429_70134129453060'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:45:35 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/index.html.erb within layouts/application (3468.1ms)
+Completed 500 Internal Server Error in 3475ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for #<Array:0x00007f92bf432340>):
+    4: 
+    5: <%# render partial for most recent search %>
+    6: <%# if  %>
+    7: <%= render 'searches', searches = Search.all.last(5)%>
+  
+app/views/searches/index.html.erb:7:in `_app_views_searches_index_html_erb___3196830627956464429_70134129321760'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:46:11 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/_searches.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (2972.6ms)
+Completed 200 OK in 3003ms (Views: 3000.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 11:47:38 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (14.2ms)
+  Rendered searches/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 39ms (Views: 34.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 11:48:14 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5AQ2jwKFYDmBZG5cvdAgS8YJfFooC1ogIhq0qfzLGjlGriBz6kpPr7YWuWjq+F+ZMeE91irR3OWtyAdxQXSIQQ==", "search"=>{"tags"=>["javascript", "jquery", "redirect"]}, "commit"=>"Enter", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (2.8ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 506004], ["title", "How do I redirect to another webpage?"], ["post_link", "https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage"], ["created_at", "2019-08-09 18:48:14.921837"], ["updated_at", "2019-08-09 18:48:14.921837"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (1.0ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 7], ["tags", "[\"javascript\", \"jquery\", \"redirect\"]"], ["created_at", "2019-08-09 18:48:14.945408"], ["updated_at", "2019-08-09 18:48:14.945408"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 484541], ["title", "How to manage a redirect request after a jQuery Ajax call"], ["post_link", "https://stackoverflow.com/questions/199099/how-to-manage-a-redirect-request-after-a-jquery-ajax-call"], ["created_at", "2019-08-09 18:48:14.948712"], ["updated_at", "2019-08-09 18:48:14.948712"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 8], ["tags", "[\"javascript\", \"jquery\", \"redirect\"]"], ["created_at", "2019-08-09 18:48:14.952432"], ["updated_at", "2019-08-09 18:48:14.952432"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 2238435], ["title", "How to make a button redirect to another page using jQuery or just Javascript"], ["post_link", "https://stackoverflow.com/questions/2238368/how-to-make-a-button-redirect-to-another-page-using-jquery-or-just-javascript"], ["created_at", "2019-08-09 18:48:14.954470"], ["updated_at", "2019-08-09 18:48:14.954470"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 9], ["tags", "[\"javascript\", \"jquery\", \"redirect\"]"], ["created_at", "2019-08-09 18:48:14.957528"], ["updated_at", "2019-08-09 18:48:14.957528"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 12446376], ["title", "change url without redirecting using javascript"], ["post_link", "https://stackoverflow.com/questions/12446317/change-url-without-redirecting-using-javascript"], ["created_at", "2019-08-09 18:48:14.959882"], ["updated_at", "2019-08-09 18:48:14.959882"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 10], ["tags", "[\"javascript\", \"jquery\", \"redirect\"]"], ["created_at", "2019-08-09 18:48:15.049426"], ["updated_at", "2019-08-09 18:48:15.049426"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 3514015], ["title", "Page redirect with successful Ajax request"], ["post_link", "https://stackoverflow.com/questions/3513971/page-redirect-with-successful-ajax-request"], ["created_at", "2019-08-09 18:48:15.052760"], ["updated_at", "2019-08-09 18:48:15.052760"]]
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["answer_id", 11], ["tags", "[\"javascript\", \"jquery\", \"redirect\"]"], ["created_at", "2019-08-09 18:48:15.057030"], ["updated_at", "2019-08-09 18:48:15.057030"]]
+  ↳ app/controllers/searches_controller.rb:29
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:29
+Redirected to http://localhost:3000/users/1/searches
+Completed 302 Found in 120459ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:50:15 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/_searches.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (456170.0ms)
+Completed 200 OK in 456199ms (Views: 456192.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:57:58 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  Rendered searches/_searches.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (19492.3ms)
+Completed 200 OK in 19543ms (Views: 19527.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-09 11:58:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.5ms)
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:58:25 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+Started GET "/users/1/searches" for ::1 at 2019-08-09 11:58:30 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/searches/index.html.erb:7
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  ↳ app/views/searches/_searches.html.erb:3
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  ↳ app/views/searches/_searches.html.erb:3
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  ↳ app/views/searches/_searches.html.erb:3
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  Rendered searches/_searches.html.erb (4640.2ms)
+  Rendered searches/index.html.erb within layouts/application (336835.1ms)
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:3
+  Rendered searches/_searches.html.erb (43.2ms)
+  Rendered searches/index.html.erb within layouts/application (341824.6ms)
+Completed 200 OK in 341868ms (Views: 341864.6ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 336877ms (Views: 336873.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:05:12 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:6: syntax error, unexpected ')', expecting then or ';' or '\n'
+...rer.include?("/searches/new") );@output_buffer.safe_append='
+...                              ^
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:8: syntax error, unexpected end, expecting ')'
+'.freeze; end ;
+          ^~~
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/searches/index.html.erb:6: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/searches/index.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/searches/index.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/searches/index.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:05:44 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (5554.6ms)
+Completed 500 Internal Server Error in 5559ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+    3: <%= link_to "Create a new search", new_user_search_path %>
+    4: 
+    5: <%# render partial for most recent search if redirected from a new search form %>
+    6: <% if request.referer.include?("/searches/new") %>
+    7:     <%= render 'searches', searches: Search.all.last(5)%>
+    8: <% end %>
+  
+app/views/searches/index.html.erb:6:in `_app_views_searches_index_html_erb___3196830627956464429_70134129359760'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:06:39 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (25.8ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+    3: <%= link_to "Create a new search", new_user_search_path %>
+    4: 
+    5: <%# render partial for most recent search if redirected from a new search form %>
+    6: <% if request.referer.include?("/searches/new") %>
+    7:     <%= render 'searches', searches: Search.all.last(5)%>
+    8: <% end %>
+  
+app/views/searches/index.html.erb:6:in `_app_views_searches_index_html_erb___3196830627956464429_70134129190940'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:06:47 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+    3: <%= link_to "Create a new search", new_user_search_path %>
+    4: 
+    5: <%# render partial for most recent search if redirected from a new search form %>
+    6: <% if request.referer.include?("/searches/new") %>
+    7:     <%= render 'searches', searches: Search.all.last(5)%>
+    8: <% end %>
+  
+app/views/searches/index.html.erb:6:in `_app_views_searches_index_html_erb___3196830627956464429_70134079100680'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:07:23 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (13417.1ms)
+Completed 500 Internal Server Error in 13424ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `match?' for nil:NilClass):
+    3: <%= link_to "Create a new search", new_user_search_path %>
+    4: 
+    5: <%# render partial for most recent search if redirected from a new search form %>
+    6: <% if request.referer.match?("/searches/new") %>
+    7:     <%= render 'searches', searches: Search.all.last(5)%>
+    8: <% end %>
+  
+app/views/searches/index.html.erb:6:in `_app_views_searches_index_html_erb___3196830627956464429_70134124757520'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:07:58 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (97372.5ms)
+Completed 500 Internal Server Error in 97378ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+    3: <%= link_to "Create a new search", new_user_search_path %>
+    4: 
+    5: <%# render partial for most recent search if redirected from a new search form %>
+    6: <% if !request.referer.nil? %>
+    7:     <% if request.referer.include?("/searches/new") %>
+    8:         <%= render 'searches', searches: Search.all.last(5)%>
+    9:     <% end %>
+  
+app/views/searches/index.html.erb:6:in `_app_views_searches_index_html_erb___3196830627956464429_70134124713740'
+Started GET "/users/1/searches" for ::1 at 2019-08-09 12:09:37 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3553.0ms)
+Completed 200 OK in 3588ms (Views: 3585.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/searches/new" for ::1 at 2019-08-09 12:09:43 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered searches/_form.html.erb (7.9ms)
+  Rendered searches/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/1/searches" for ::1 at 2019-08-09 12:09:55 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umGiN44eNcq/YCWzhqFBbs0H+aVHO21XR7GigYGb47QYy7TLZtEaXIgS8ofRiT68Ou+4KUXh65LIYxFZPCRxzA==", "search"=>{"tags"=>["python", "arrays", "strings"]}, "commit"=>"Enter", "user_id"=>"1"}
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/searches_controller.rb:21:in `block in create'
+app/controllers/searches_controller.rb:19:in `times'
+app/controllers/searches_controller.rb:19:in `create'
