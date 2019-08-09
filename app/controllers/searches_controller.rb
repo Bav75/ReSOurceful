@@ -12,11 +12,13 @@ require 'httparty'
     def create
         binding.pry 
         tags = params[:search][:tags]
+        @searches = [] 
         if tags.any? {|x| x.empty?}
             @user = current_user
             @search = Search.new 
             flash[:alert] = "Tag fields cannot be empty. Please fill out each tag."
-            render :new
+            # render :new
+            redirect_to new_user_search_path
         else
             url = api_endpoint_builder(tags)
             response = HTTParty.get(url)
@@ -26,24 +28,33 @@ require 'httparty'
                 @user = current_user
                 @search = Search.new 
                 flash[:alert] = "No answers were found for the search tags provided. Please try a different combination of search tags."
-                render :new
+                # render :new
+                redirect_to new_user_search_path
             else
                 # create 5 search & answer objects 
                 5.times do |i|
-                    answer = Answer.create(
-                        title: response['items'][i]['title'],
-                        post_link: response['items'][i]['link'],
+                    answer = Answer.find_or_create_by(
                         accepted_answer_id: response['items'][i]['accepted_answer_id'],
+                        title: response['items'][i]['title'],
+                        post_link: response['items'][i]['link']
                     )
-                    search = current_user.searches.build(
-                        answer_id: answer.id,
-                        tags: tags 
-                    )
-                    search.save
+                    # binding.pry
+                    if Search.find_duplicates(answer, current_user).empty?
+                        search = current_user.searches.build(
+                            answer_id: answer.id,
+                            tags: tags 
+                        )
+                        search.save
+                    else
+                        search = Search.find_duplicates(answer, current_user)
+                    end
+                    @searches << search
                     # binding.pry
                 end
-                # binding.pry
+                binding.pry
                 # use request.referer
+                # flatten searches array before passing to index for rendering 
+                @searches.flatten! 
                 redirect_to user_searches_path
             end
         end

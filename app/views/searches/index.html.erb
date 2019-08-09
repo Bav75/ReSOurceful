@@ -2,12 +2,14 @@
 <%# display data validation errors if they exist %>
 <%= render 'layouts/validation_errors' %>
 
+<% binding.pry %>
+
 
 <%= link_to "Create a new search", new_user_search_path %>
 
 <%# render partial for most recent search if redirected from a new search form %>
 <% if !request.referer.nil? %>
     <% if request.referer.include?("/searches/new") %>
-        <%= render 'searches', searches: Search.all.last(5)%>
+        <%= render 'searches', searches: @searches%>
     <% end %>
 <% end %>

@@ -5,4 +5,11 @@ class Search < ApplicationRecord
     
     validates :tags, presence: true
 
+    # finds existing searches for a given user and answer
+    def self.find_duplicates(answer, user)
+        self.where(user: user, answer: answer)
+    end
+
+    
+
 end
