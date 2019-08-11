@@ -5,7 +5,6 @@ class UsersController < ApplicationController
    end 
 
    def create
-    # binding.pry
     
     if User.find_by(username: params[:user][:username])
         flash[alert] = "This username already exists. Please try a different username."

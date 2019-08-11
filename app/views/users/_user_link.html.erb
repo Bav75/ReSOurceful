@@ -1,7 +1,13 @@
-<h1><%= user.username%> account page</h1>
+<%= stylesheet_link_tag "login" %>
 
-<%# GET /user/:id/edit link %>
-<%= link_to "Edit account details", edit_user_path(user) %>
+<div class="title">
+    <h1><%= user.username%> account page</h1>
+</div >
 
-<%# log out link %>
-<%= link_to "Log out", "/logout", method: :delete %>
+<div class="page">
+    <%# GET /user/:id/edit link %>
+    <%= link_to "Edit account details", edit_user_path(user) %>
+
+    <%# log out link %>
+    <%= link_to "Log out", "/logout", method: :delete %>
+</div>

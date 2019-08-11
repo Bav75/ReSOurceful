@@ -1,14 +1,18 @@
+<%= stylesheet_link_tag "login" %>
 
 <%# display data validation errors if they exist %>
 <%= render 'layouts/validation_errors' %>
 
 
+<div class="title">
+    <%= link_to "Create a new search", new_user_search_path %>
+</div>
 
-<%= link_to "Create a new search", new_user_search_path %>
-
-<%# render partial for most recent search if redirected from a new search form %>
-<% if !request.referer.nil? %>
-    <% if request.referer.include?("/searches/new") %>
-        <%= render 'searches', searches: @searches%>
+<div class="page">
+    <%# render partial for most recent search if redirected from a new search form %>
+    <% if !request.referer.nil? %>
+        <% if request.referer.include?("/searches/new") %>
+            <%= render 'searches', searches: @searches%>
+        <% end %>
     <% end %>
-<% end %>
+</div>
