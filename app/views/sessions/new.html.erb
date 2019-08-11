@@ -6,12 +6,15 @@
     </head>
 
     <body>
+        <div class="title">
+            <p>Login to ReSOurceful</p>
+        </div>
+
         <div class="page">
             <%# display data validation errors if they exist %>
             <%= render 'layouts/validation_errors' %>
 
             <%# log in form %>
-            <p>Login to ReSOurceful</p>
             <%= form_for(:session, url: login_path) do |f| %>
                 <%= f.label :username %>
                 <%= f.text_field :username%>

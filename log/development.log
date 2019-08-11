@@ -8098,3 +8098,258 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 4844ms (Views: 4827.6ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/login" for ::1 at 2019-08-11 16:02:54 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (205.1ms)
+Completed 200 OK in 239ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:03:36 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:03:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:03:52 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:04:02 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:04:08 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:04:14 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:04:23 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:04:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:05:22 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:05:57 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:06:16 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-08-11 16:06:54 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 49ms (Views: 25.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for ::1 at 2019-08-11 16:09:34 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered users/_form.html.erb (4.9ms)
+  Rendered users/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-11 16:10:47 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uqDK9AxshMoOWbnAuuBKaJ4WPZ/wF2fZUqUoaomq1ag289Xgy54SEAoee1r1CvKnybxAQPPEAlUOVcdXkg4Duw==", "user"=>{"username"=>"jackdaboy", "password"=>"[FILTERED]"}, "commit"=>"Enter"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? AND "users"."password" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["password", "ohboy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.password: SELECT  "users".* FROM "users" WHERE "users"."username" = ? AND "users"."password" = ? LIMIT ?):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2019-08-11 16:13:36 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b9GIi3ZBQ9mXEV/nbDnGjWCoSAidHY/nEUJxHHE4Rw2+gcuxnGg2+nY4bp0o1THEVg3jy0hxt6wIr+KMf24L+A==", "user"=>{"username"=>"jackdaboy", "password"=>"[FILTERED]"}, "commit"=>"Enter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? AND "users"."password" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["password", "boi"], ["LIMIT", 1]]
+  ↳ (pry):4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? AND "users"."password" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["password", "boi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 248573ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.password: SELECT  "users".* FROM "users" WHERE "users"."username" = ? AND "users"."password" = ? LIMIT ?):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2019-08-11 16:17:50 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b9GIi3ZBQ9mXEV/nbDnGjWCoSAidHY/nEUJxHHE4Rw2+gcuxnGg2+nY4bp0o1THEVg3jy0hxt6wIr+KMf24L+A==", "user"=>{"username"=>"jackdaboy", "password"=>"[FILTERED]"}, "commit"=>"Enter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "jackdaboy"], ["password_digest", "$2a$12$57y8ZJxsjfvJ5HkrVcfFielOuIyJ2IA8Y2ZVq533Tw0tZFczb7hqq"], ["created_at", "2019-08-11 23:17:50.774329"], ["updated_at", "2019-08-11 23:17:50.774329"]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 242ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 16:17:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-11 16:17:53 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JUBsUzplNFeayMHTewd0p6QtU8T5oSdClx9sFo93GUX0EC9p0ExBdHvh8Kk/64Pukoj4ByzNHwmO8v+GgSFVsA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:17:53 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-08-11 16:17:58 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 68ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-11 16:18:04 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xudj9sA8u2fTiNi1OXt2y3r76djJlQQl26R9n/PFpnNt+LsTjN1g/rnw3jo7w/vh9IL/NSttDnz4/cSstNCQtA==", "user"=>{"username"=>"jackdaboy", "password"=>"[FILTERED]"}, "commit"=>"Enter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2019-08-11 16:18:04 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:18:12 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-08-11 16:18:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmMS0yvQgFDJKA9oapkX2s0c2dEh2hmHcV+B+7FbowKnU0rVgVGWmOK+qriPr/SqBCi0qKwLHlfBJexmAgxtlA==", "session"=>{"username"=>"jackdaboy", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jackdaboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:14
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 228ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 16:18:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-11 16:18:20 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IVc4li3evq8Ot/ppeVUmBM4N5u83sGnlrGsLy4yMlKZ6otCs5NVoT7EazznOnzVFsgU70y3La8a0s2pOCp7Zqg=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:18:20 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+

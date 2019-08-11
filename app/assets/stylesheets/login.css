@@ -6,7 +6,7 @@
 }
 
 body {
-	background: rgb(139, 133, 136);
+	background: rgb(255, 255, 255);
 	font-size: 100%;
 	font-family: 'Times New Roman', serif; 
 }
@@ -15,6 +15,17 @@ body {
 	margin: 0;
 	position: absolute;
 	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.title {
+    background: rgba(73, 160, 226, 0.952);
+	font-size: 200%;
+    font-family: 'Times New Roman', serif; 
+    margin: 0;
+	position: absolute;
+	top: 10%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
