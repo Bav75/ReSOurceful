@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   ###static routes
     #homepage 
-  get '/', to: 'static#home' 
+  # get '/', to: 'static#home' 
+  # remapped the login page as the homepage 
+  root to: "sessions#new"
 
   ###sessions routes 
   get '/login', to: 'sessions#new'
