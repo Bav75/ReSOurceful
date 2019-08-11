@@ -1,41 +1,33 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <%= stylesheet_link_tag "login" %>
-    </head>
 
-    <body>
-        <div class="title">
-            <p>Login to ReSOurceful</p>
-        </div>
+<div class="title">
+    <p>Login to ReSOurceful</p>
+</div>
 
-        <div class="page">
-            <%# display data validation errors if they exist %>
-            <%= render 'layouts/validation_errors' %>
+<div class="page">
+    <%# display data validation errors if they exist %>
+    <%= render 'layouts/validation_errors' %>
 
-            <%# log in form %>
-            <%= form_for(:session, url: login_path) do |f| %>
-                <%= f.label :username %>
-                <%= f.text_field :username%>
+    <%# log in form %>
+    <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username%>
 
-                <br>
-                <br>
+        <br>
+        <br>
 
-                <%= f.label :password %>
-                <%= f.password_field :password%>
+        <%= f.label :password %>
+        <%= f.password_field :password%>
 
-                <br>
-                <br>
+        <br>
+        <br>
 
-                <%= f.submit 'Log in' %>
-            <% end %>
+        <%= f.submit 'Log in' %>
+    <% end %>
 
-            <%# Oauth login link %>
-            <p>Log in using <%= link_to "StackExchange", "/auth/stackexchange" %> </p>
+    <%# Oauth login link %>
+    <p>Log in using <%= link_to "StackExchange", "/auth/stackexchange" %> </p>
 
-            <%# link to sign up for new users %>
-            <p>New to ReSOurceful? <%= link_to "Sign up here", new_user_path %> </p>
-        </div>
-    </body>
-</html>
+    <%# link to sign up for new users %>
+    <p>New to ReSOurceful? <%= link_to "Sign up here", new_user_path %> </p>
+</div>
+  
