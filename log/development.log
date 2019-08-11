@@ -7959,3 +7959,142 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 6037ms (Views: 6032.9ms | ActiveRecord: 2.1ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-08-11 15:51:42 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 250ms (Views: 244.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 15:51:43 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (130.2ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<#<Class:0x00007fe39dd1c850>:0x00007fe3a3342f18>
+Did you mean?  URI):
+    2: <html>
+    3:     <head>
+    4:         <meta charset="UTF-8">
+    5:         <link href="<%= url('/assets/login.css') %>" rel="stylesheet" type="text/css" />
+    6:     </head>
+    7: 
+    8:     <body>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb___1292958454308981725_70307791038440'
+Started GET "/login" for ::1 at 2019-08-11 15:53:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( login.css )` to `config/initializers/assets.rb` and restart your server):
+    2: <html>
+    3:     <head>
+    4:         <meta charset="UTF-8">
+    5:         <%= stylesheet_link_tag "login" %>
+    6:     </head>
+    7: 
+    8:     <body>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb___1292958454308981725_70307835972180'
+Started GET "/login" for ::1 at 2019-08-11 15:54:46 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (268.2ms)
+Completed 200 OK in 305ms (Views: 299.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 15:55:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 15:56:52 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 15:56:52 -0700
+Started GET "/auth/stackexchange/callback?code=sojP(iwOZxW0k8duVN4qNA))&state=6b9cd361a76f801e328b93ce795e7fffdfc29e56ebcd2b85" for ::1 at 2019-08-11 15:56:52 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"sojP(iwOZxW0k8duVN4qNA))", "state"=>"6b9cd361a76f801e328b93ce795e7fffdfc29e56ebcd2b85", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 23ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 15:56:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-11 15:56:58 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cdiPOagk1Jphq80R6razhAr+2i9G5zX6NEh1oKAsTbGYDOmz+8pYBQIrU9rYD/QELpbr+62BmWhhHB3eKnHuuw=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 15:56:58 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 15:57:02 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 15:57:02 -0700
+Started GET "/auth/stackexchange/callback?code=8zxYKwG6xN*Vi8GBirIFhQ))&state=3ad746b5a955b1bcd499a24e27b2b52826379f4c69b4668e" for ::1 at 2019-08-11 15:57:02 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"8zxYKwG6xN*Vi8GBirIFhQ))", "state"=>"3ad746b5a955b1bcd499a24e27b2b52826379f4c69b4668e", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 15:57:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2/searches" for ::1 at 2019-08-11 15:57:06 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered searches/index.html.erb within layouts/application (4810.2ms)
+Completed 200 OK in 4844ms (Views: 4827.6ms | ActiveRecord: 0.2ms)
+
+

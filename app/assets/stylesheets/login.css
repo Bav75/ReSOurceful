@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+	padding: 5;
+	margin: 0;
+}
+
+body {
+	background: rgb(139, 133, 136);
+	font-size: 100%;
+	font-family: 'Times New Roman', serif; 
+}
+
+.page {
+	margin: 0;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.headers {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(255, 255, 255);
+}
