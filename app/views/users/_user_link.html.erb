@@ -4,6 +4,10 @@
 </div >
 
 <div class="page">
+
+     <%# Navigate to searches index %>
+    <%= link_to "Start searching Stack Overflow", user_searches_path(user) %>
+
     <%# GET /user/:id/edit link %>
     <%= link_to "Edit account details", edit_user_path(user) %>
 

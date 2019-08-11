@@ -3,20 +3,21 @@
 <%= render 'layouts/validation_errors' %>
 
 
+<div class="page">
+    <%# partial for @user - user signup and user account detail editing %>
+    <%= form_for user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
 
-<%# partial for @user - user signup and user account detail editing %>
-<%= form_for user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+        <br>
+        <br>
 
-    <br>
-    <br>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+        <br>
+        <br>
 
-    <br>
-    <br>
-
-    <%= f.submit "Enter"%>
-<% end %>
+        <%= f.submit "Enter"%>
+    <% end %>
+</div>
