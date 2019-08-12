@@ -11847,3 +11847,261 @@ ActionView::Template::Error (undefined method `persisted?' for #<Class:0x00007f8
 app/views/searches/index.html.erb:16:in `block (2 levels) in _app_views_searches_index_html_erb___2730015875085847346_70108888111060'
 app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108888111060'
 app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108888111060'
+Started GET "/login" for ::1 at 2019-08-12 12:14:44 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 230ms (Views: 224.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 12:14:46 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 12:14:46 -0700
+Started GET "/auth/stackexchange/callback?code=mO(*oj(9R6tlD0Ti*Tqt0A))&state=337f4c3b8c102f233e19eeddb67fb50d9be08978dd1566ee" for ::1 at 2019-08-12 12:14:46 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"mO(*oj(9R6tlD0Ti*Tqt0A))", "state"=>"337f4c3b8c102f233e19eeddb67fb50d9be08978dd1566ee", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 19ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 12:14:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:14:49 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_navigation with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views"
+):
+    1: 
+    2: <%# display navigation bar %>
+    3: <%= render 'layouts/navigation' %>
+    4: 
+    5: 
+    6: <%# display data validation errors if they exist %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3238414849083099559_70094106125680'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:15:09 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered layouts/_navigation.html.erb (217.4ms)
+  Rendered searches/index.html.erb within layouts/application (219.4ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f801c97c388>:0x00007f801c85b328>
+Did you mean?  super):
+    1: <%= link_to "Your Profile", user_path(current_user) %>
+    2: <%= link_to "Log out", "/logout", method: :delete %>
+    3: <%= link_to "Start another search", new_user_search_path(user) %>
+  
+app/views/layouts/_navigation.html.erb:3:in `_app_views_layouts__navigation_html_erb___2389456580027969340_70094098340840'
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3238414849083099559_70094105533900'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:15:27 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 12:15:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 12:15:34 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.8ms)
+  Rendered searches/_form.html.erb (9.8ms)
+  Rendered searches/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-12 12:15:40 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oZfNYUBQctCjNuRTJ5odnRrzjJj1PF/UGvaOrnmNK3ZgpZcAdYVRLXXsxiXUdcINvGT5Pm4YpEuOamrFDXsShw=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 12:15:40 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 12:15:42 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 12:15:42 -0700
+Started GET "/auth/stackexchange/callback?code=rktFPxFeS22Q24i2KQDR3w))&state=706b7c544d9ab7fcba2e53eac30ecf34479c0aafddb15fae" for ::1 at 2019-08-12 12:15:42 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"rktFPxFeS22Q24i2KQDR3w))", "state"=>"706b7c544d9ab7fcba2e53eac30ecf34479c0aafddb15fae", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 12:15:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:15:45 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 12:15:47 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered searches/_form.html.erb (1.2ms)
+  Rendered searches/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 12:17:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:17:16 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered searches/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 12:17:17 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/_form.html.erb (2.8ms)
+  Rendered searches/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 12:17:19 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:17:31 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 12:17:36 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/_form.html.erb (1.4ms)
+  Rendered searches/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
