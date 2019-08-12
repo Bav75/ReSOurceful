@@ -31,7 +31,23 @@ class UsersController < ApplicationController
    end 
 
    def edit
-    # binding.pry
+   end
+
+   def update
+    if User.find_by(username: params[:user][:username]) && params[:user][:username] != current_user.username
+        flash[alert] = "This username already exists. Please try a different username."
+        redirect_to edit_user_path(current_user)
+    else
+        if current_user.update(user_params)
+            redirect_to user_path(current_user)
+        else
+            #if user didn't persist - load errors to flash msg & redirect 
+            current_user.errors.messages.each do |error_symbol, message|
+                flash[error_symbol] = "There appears to be an error: #{error_symbol} #{message[0]}"
+            end
+            redirect_to edit_user_path(current_user)
+        end
+    end
    end
 
 

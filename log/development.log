@@ -9211,3 +9211,307 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2019-08-11 17:02:03 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 206ms (Views: 201.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:02:05 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:02:05 -0700
+Started GET "/auth/stackexchange/callback?code=VRG3gvUzVIkHuDlfYwyJBQ))&state=fd6f4e8c800c29c19e0124b0c28fdeb2289951c323dfd464" for ::1 at 2019-08-11 17:02:05 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"VRG3gvUzVIkHuDlfYwyJBQ))", "state"=>"fd6f4e8c800c29c19e0124b0c28fdeb2289951c323dfd464", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 17:02:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:02:08 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:34:in `edit'
+Started GET "/users/2" for ::1 at 2019-08-11 17:02:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.2ms)
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:02:31 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:34:in `edit'
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:03:14 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:34:in `edit'
+Started GET "/users/2" for ::1 at 2019-08-11 17:05:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 16.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:05:19 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered users/_form.html.erb (12.3ms)
+  Rendered users/edit.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for ::1 at 2019-08-11 17:05:33 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL5Qs+/nJXUtHkjtBzqLtemORNiYS/dajq+seSX3NeIuPuiNYdlcuJEMO4l9ojDv+MYh1hEIj8OJFHdU6yGc6Q==", "user"=>{"username"=>"Bav75", "password"=>"[FILTERED]"}, "commit"=>"Enter", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+Redirected to http://localhost:3000/users/2/edit
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:05:33 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered users/_form.html.erb (8.7ms)
+  Rendered users/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-08-11 17:51:25 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 243ms (Views: 236.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:51:27 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:51:27 -0700
+Started GET "/auth/stackexchange/callback?code=KoVZo9opIqRUj*oHWpry9A))&state=614034dfd747e79f889ab33b5ae1236c073f67c5c3805189" for ::1 at 2019-08-11 17:51:27 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"KoVZo9opIqRUj*oHWpry9A))", "state"=>"614034dfd747e79f889ab33b5ae1236c073f67c5c3805189", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 20ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 17:51:28 -0700
+  
+SyntaxError (/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/controllers/users_controller.rb:43: syntax error, unexpected else, expecting end
+        else
+        ^~~~
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/controllers/users_controller.rb:60: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:43: syntax error, unexpected else, expecting end
+app/controllers/users_controller.rb:60: syntax error, unexpected end, expecting end-of-input
+Started GET "/users/2" for ::1 at 2019-08-11 17:51:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 15.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:51:53 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered layouts/_validation_errors.html.erb (1.0ms)
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 35ms (Views: 28.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/2" for ::1 at 2019-08-11 17:51:57 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iF7ROaLj32fYZCCbFG/yycJS2VpO7GuvUJCE1LXbsBAa3mkHLN2mqmR2U/9u90mT0xq8VMevEzZXK1/5ew0ZGw==", "user"=>{"username"=>"Bav75", "password"=>"[FILTERED]"}, "commit"=>"Enter", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bav75"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$12$pkW7NI.awIb38xb2a7RoBOrXuDu0Gukd/e0wARiBJVwnZn.sD2gI2"], ["updated_at", "2019-08-12 00:51:57.631876"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 229ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 17:51:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-08-11 17:51:59 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/2" for ::1 at 2019-08-11 17:52:10 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c0rhc88m1DnT5GMS5XDfbbRQTGE3l0TPCt6Fg7JfCFXhyllNQRit9G/2EHaf6GQ3pRgpb77UPFYNZV6ufImhXg==", "user"=>{"username"=>"Bee", "password"=>"[FILTERED]"}, "commit"=>"Enter", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bee"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bee"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "username" = ?, "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["username", "Bee"], ["password_digest", "$2a$12$W3G4OHbPy1aakZfCcz581ullV596L7.g0GviaFVOztWbQeT4HmeYe"], ["updated_at", "2019-08-12 00:52:10.805174"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 233ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 17:52:10 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.2ms)
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-11 17:52:12 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"scQTBK588VHK2QdGBq/OQdkFDB/cWb9d7xLFJ09nReLTSBGR0BDp6H3hYrdzTmhQi8mF/NxjrDc9DOTn2q7iGg=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 17:52:12 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:52:13 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-11 17:52:13 -0700
+Started GET "/auth/stackexchange/callback?code=cF0jX8BZrqglVdAYrcWGAA))&state=0d48913cd336ac0ea3a853a6c47d9c68c1f6fd5a9cff19bf" for ::1 at 2019-08-11 17:52:14 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"cF0jX8BZrqglVdAYrcWGAA))", "state"=>"0d48913cd336ac0ea3a853a6c47d9c68c1f6fd5a9cff19bf", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18
+  [1m[36mUser Create (5.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Bav75"], ["password_digest", "$2a$12$qiguY.mMuRenJwQ4piEL7eJ8k0o8H0e6.I167Ay82wu1PoVBadR7O"], ["created_at", "2019-08-12 00:52:14.992969"], ["updated_at", "2019-08-12 00:52:14.992969"]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:18
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 228ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-11 17:52:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-11 17:52:17 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7a6gvK2tIKhKZwlCY3C+IZ+YUY9OKXHLQXtAlzOvUzqRr0m5gFBoOSb+r17JYtPTy98krl+rd6JY1Rqpt2+5yw=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 17:52:17 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
