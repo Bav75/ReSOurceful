@@ -10,7 +10,6 @@ require 'httparty'
     end
 
     def create
-        binding.pry 
         tags = params[:search][:tags]
         @searches = [] 
         if tags.any? {|x| x.empty?}
@@ -51,7 +50,6 @@ require 'httparty'
                     @searches << search
                     # binding.pry
                 end
-                binding.pry
                 # use request.referer
                 # flatten searches array before passing to index for rendering 
                 @searches.flatten! 

@@ -10,8 +10,10 @@
 <div class="page">
     <%# render partial for most recent search if redirected from a new search form %>
     <% if !request.referer.nil? %>
-        <% if request.referer.include?("/searches/new") %>
+        <% if request.referer.include?("/searches/new") && !@searches.empty? %>
             <%= render 'searches', searches: @searches%>
         <% end %>
     <% end %>
+
 </div>
+

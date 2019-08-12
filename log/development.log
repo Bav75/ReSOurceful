@@ -9749,3 +9749,2101 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-12 11:33:29 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 226ms (Views: 219.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:33:32 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:33:33 -0700
+Started GET "/auth/stackexchange/callback?code=VlsDGtxs78Pjg8IZU7ob1w))&state=98a31a779dacc7bdc447503619a2807b7fbd6d17bcfb278f" for ::1 at 2019-08-12 11:33:33 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"VlsDGtxs78Pjg8IZU7ob1w))", "state"=>"98a31a779dacc7bdc447503619a2807b7fbd6d17bcfb278f", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 24ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 11:33:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:33:37 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered searches/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 5..7)):
+    19:     <br>
+    20: 
+    21:     <%= fields_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :id, :answer, {multiple: true}) %>
+    23:     <% end %> 
+    24:     
+    25: </div>
+  
+app/views/searches/index.html.erb:22:in `block in _app_views_searches_index_html_erb__4058190953984306839_70207118508640'
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb__4058190953984306839_70207118508640'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:33:55 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  ids):
+    19:     <br>
+    20: 
+    21:     <%= fields_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :id, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+    25: </div>
+  
+app/views/searches/index.html.erb:22:in `block in _app_views_searches_index_html_erb__4058190953984306839_70207072773620'
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb__4058190953984306839_70207072773620'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:34:24 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for #<ActiveRecord::Associations::CollectionProxy []>):
+    19:     <br>
+    20: 
+    21:     <%= fields_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :tags, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+    25: </div>
+  
+app/views/searches/index.html.erb:22:in `block in _app_views_searches_index_html_erb__4058190953984306839_70207117498440'
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb__4058190953984306839_70207117498440'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:35:32 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Searches):
+    19:     <br>
+    20: 
+    21:     <%= fields_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+    25: </div>
+  
+app/views/searches/index.html.erb:22:in `block in _app_views_searches_index_html_erb__4058190953984306839_70207117418300'
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb__4058190953984306839_70207117418300'
+Started GET "/" for ::1 at 2019-08-12 11:35:56 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 228ms (Views: 222.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:35:57 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:35:57 -0700
+Started GET "/auth/stackexchange/callback?code=eLfv6VJ9hd730JRqS*es0A))&state=571f7a9d9ef802680d867f92a3776f4d9272e943617086ca" for ::1 at 2019-08-12 11:35:58 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"eLfv6VJ9hd730JRqS*es0A))", "state"=>"571f7a9d9ef802680d867f92a3776f4d9272e943617086ca", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 18ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 11:35:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:36:00 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Searches):
+    19:     <br>
+    20: 
+    21:     <%= fields_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+    25: </div>
+  
+app/views/searches/index.html.erb:22:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108839820840'
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108839820840'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:37:27 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/index.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Class:0x00007f86f8fce500>
+Did you mean?  to_query):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108846076340'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:37:43 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Search::ActiveRecord_Relation:0x00007f86fd9014e8>
+Did you mean?  to_set
+               to_ary):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search.all) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108878098720'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:37:51 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:21
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (149.9ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86f8fc74f8>:0x00007f86fb922208>
+Did you mean?  search_field_tag):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search.last) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108861452600'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:38:01 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:21
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (143.2ms)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86f8fc74f8>:0x00007f86f9c26ca8>
+Did you mean?  search_field_tag):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search.all.last) do |f| %>
+    22:         <%= collection_select(:searches, :id, Searches.find_users_searches, :answer, {}, {multiple: true}) %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108846307980'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:40:25 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Class:0x00007f86f8fce500>
+Did you mean?  to_query):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search) do |f| %>
+    22:         <%= f.submit %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108886995160'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:40:34 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:21
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (121.8ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86f8fc74f8>:0x00007f86fdca7868>
+Did you mean?  search_field_tag):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(Search.last) do |f| %>
+    22:         <%= f.submit %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108880101520'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:41:32 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  to_set
+               to_ary):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(@searches) do |f| %>
+    22:         <%= f.submit %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108890385880'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:41:41 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:21
+  Rendered searches/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    18:     <br>
+    19:     <br>
+    20: 
+    21:     <%= form_for(@searches[0]) do |f| %>
+    22:         <%= f.submit %>
+    23:     <% end %> 
+    24: 
+  
+app/views/searches/index.html.erb:21:in `_app_views_searches_index_html_erb___2730015875085847346_70108886188160'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:46:33 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 11:46:35 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/_form.html.erb (15.6ms)
+  Rendered searches/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:46:42 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VZDLmHOhbxIrXoZYCjCXe8ESwVHqN9aoNqFt9CN9lWQ/h43nrwTr+5MURqze6YlKgEkImnvMpJ9qhBPfKBvvDg==", "search"=>{"tags"=>["python", "dictionary", "sorting"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (1.7ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 613218], ["title", "How do I sort a dictionary by value?"], ["post_link", "https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:36
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mSearch Create (3.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 1], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:47:08.816541"], ["updated_at", "2019-08-12 18:47:08.816541"]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 73050], ["title", "How do I sort a list of dictionaries by a value of the dictionary?"], ["post_link", "https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-a-value-of-the-dictionary"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:36
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 2], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:47:08.826258"], ["updated_at", "2019-08-12 18:47:08.826258"]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 9001529], ["title", "How can I sort a dictionary by key?"], ["post_link", "https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:36
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mSearch Create (0.6ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 3], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:47:08.832573"], ["updated_at", "2019-08-12 18:47:08.832573"]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 364599], ["title", "In Python, how do I iterate over a dictionary in sorted key order?"], ["post_link", "https://stackoverflow.com/questions/364519/in-python-how-do-i-iterate-over-a-dictionary-in-sorted-key-order"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:36
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 4], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:47:08.839362"], ["updated_at", "2019-08-12 18:47:08.839362"]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 25480214], ["title", "Right way to initialize an OrderedDict using its constructor such that it retains order of initial data?"], ["post_link", "https://stackoverflow.com/questions/25480089/right-way-to-initialize-an-ordereddict-using-its-constructor-such-that-it-retain"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:36
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 5], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:47:08.846949"], ["updated_at", "2019-08-12 18:47:08.846949"]]
+  ↳ app/controllers/searches_controller.rb:47
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:47
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 28265ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:47:11 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (1.8ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (20.0ms)
+  Rendered searches/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 54ms (Views: 37.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:47:38 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (3.6ms)
+  Rendered searches/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108880140200'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108880073140'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:48:19 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (3.3ms)
+  Rendered searches/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108886227100'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108846468280'
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:48:22 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d6XfJrvjc/WtWfKiJo3tMDjiOCcrOy+uDRZ5W99HfV+2l4VHjjZQCHuD0NTVYjKgnnVNgbAf1DGZip0wq7FErg==", "search"=>{"tags"=>["python", "dictionary", "sorting"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 613218], ["title", "How do I sort a dictionary by value?"], ["post_link", "https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (7.0ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 1], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:48:22.885307"], ["updated_at", "2019-08-12 18:48:22.885307"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 73050], ["title", "How do I sort a list of dictionaries by a value of the dictionary?"], ["post_link", "https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-a-value-of-the-dictionary"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 2], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:48:22.898328"], ["updated_at", "2019-08-12 18:48:22.898328"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 9001529], ["title", "How can I sort a dictionary by key?"], ["post_link", "https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 3], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:48:22.905931"], ["updated_at", "2019-08-12 18:48:22.905931"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 364599], ["title", "In Python, how do I iterate over a dictionary in sorted key order?"], ["post_link", "https://stackoverflow.com/questions/364519/in-python-how-do-i-iterate-over-a-dictionary-in-sorted-key-order"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 4], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:48:22.911111"], ["updated_at", "2019-08-12 18:48:22.911111"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 25480214], ["title", "Right way to initialize an OrderedDict using its constructor such that it retains order of initial data?"], ["post_link", "https://stackoverflow.com/questions/25480089/right-way-to-initialize-an-ordereddict-using-its-constructor-such-that-it-retain"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 5], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:48:22.915591"], ["updated_at", "2019-08-12 18:48:22.915591"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 245ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:48:22 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (1.8ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (7.8ms)
+  Rendered searches/index.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches[0]) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108886550320'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:48:33 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (2.7ms)
+  Rendered searches/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108846435040'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108886079940'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:48:46 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  to_set
+               to_ary):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108844042280'
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:48:52 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d6XfJrvjc/WtWfKiJo3tMDjiOCcrOy+uDRZ5W99HfV+2l4VHjjZQCHuD0NTVYjKgnnVNgbAf1DGZip0wq7FErg==", "search"=>{"tags"=>["python", "dictionary", "string"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 988251], ["title", "Convert a String representation of a Dictionary to a dictionary?"], ["post_link", "https://stackoverflow.com/questions/988228/convert-a-string-representation-of-a-dictionary-to-a-dictionary"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 988251], ["title", "Convert a String representation of a Dictionary to a dictionary?"], ["post_link", "https://stackoverflow.com/questions/988228/convert-a-string-representation-of-a-dictionary-to-a-dictionary"], ["created_at", "2019-08-12 18:48:52.386119"], ["updated_at", "2019-08-12 18:48:52.386119"]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 18], ["tags", "[\"python\", \"dictionary\", \"string\"]"], ["created_at", "2019-08-12 18:48:52.398017"], ["updated_at", "2019-08-12 18:48:52.398017"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5952472], ["title", "How do I format a string using a dictionary in python-3.x?"], ["post_link", "https://stackoverflow.com/questions/5952344/how-do-i-format-a-string-using-a-dictionary-in-python-3-x"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 5952472], ["title", "How do I format a string using a dictionary in python-3.x?"], ["post_link", "https://stackoverflow.com/questions/5952344/how-do-i-format-a-string-using-a-dictionary-in-python-3-x"], ["created_at", "2019-08-12 18:48:52.401464"], ["updated_at", "2019-08-12 18:48:52.401464"]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 19], ["tags", "[\"python\", \"dictionary\", \"string\"]"], ["created_at", "2019-08-12 18:48:52.407040"], ["updated_at", "2019-08-12 18:48:52.407040"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 4917044], ["title", "String to Dictionary in Python"], ["post_link", "https://stackoverflow.com/questions/4917006/string-to-dictionary-in-python"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 4917044], ["title", "String to Dictionary in Python"], ["post_link", "https://stackoverflow.com/questions/4917006/string-to-dictionary-in-python"], ["created_at", "2019-08-12 18:48:52.410955"], ["updated_at", "2019-08-12 18:48:52.410955"]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 20], ["tags", "[\"python\", \"dictionary\", \"string\"]"], ["created_at", "2019-08-12 18:48:52.415937"], ["updated_at", "2019-08-12 18:48:52.415937"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 186873], ["title", "Splitting a semicolon-separated string to a dictionary, in Python"], ["post_link", "https://stackoverflow.com/questions/186857/splitting-a-semicolon-separated-string-to-a-dictionary-in-python"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 186873], ["title", "Splitting a semicolon-separated string to a dictionary, in Python"], ["post_link", "https://stackoverflow.com/questions/186857/splitting-a-semicolon-separated-string-to-a-dictionary-in-python"], ["created_at", "2019-08-12 18:48:52.419991"], ["updated_at", "2019-08-12 18:48:52.419991"]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 21], ["tags", "[\"python\", \"dictionary\", \"string\"]"], ["created_at", "2019-08-12 18:48:52.425512"], ["updated_at", "2019-08-12 18:48:52.425512"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 4342219], ["title", "How do I serialize a Python dictionary into a string, and then back to a dictionary?"], ["post_link", "https://stackoverflow.com/questions/4342176/how-do-i-serialize-a-python-dictionary-into-a-string-and-then-back-to-a-diction"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("accepted_answer_id", "title", "post_link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["accepted_answer_id", 4342219], ["title", "How do I serialize a Python dictionary into a string, and then back to a dictionary?"], ["post_link", "https://stackoverflow.com/questions/4342176/how-do-i-serialize-a-python-dictionary-into-a-string-and-then-back-to-a-diction"], ["created_at", "2019-08-12 18:48:52.430536"], ["updated_at", "2019-08-12 18:48:52.430536"]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 22], ["tags", "[\"python\", \"dictionary\", \"string\"]"], ["created_at", "2019-08-12 18:48:52.435571"], ["updated_at", "2019-08-12 18:48:52.435571"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 272ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:48:52 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (3.0ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (11.9ms)
+  Rendered searches/index.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  to_set
+               to_ary):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108880052360'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:49:18 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.2ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  to_set
+               to_ary):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108844093000'
+Started GET "/users/4" for ::1 at 2019-08-12 11:49:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 11:49:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:49:21 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (33.9ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  to_set
+               to_ary):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108880479100'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:49:41 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:22
+  Rendered searches/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches[0]) do |f| %>
+    23:         <%= f.submit %>
+    24:     <% end %> 
+    25: <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108886669880'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:50:59 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.2ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:22
+  Rendered searches/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches[0]) do |f| %>
+    23:         <%= f.select :id, Search.find_users_searches %>
+    24:         <%= f.submit %>
+    25:     <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108880103520'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:51:02 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:22
+  Rendered searches/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    19:     <br>
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <%= form_for(@searches[0]) do |f| %>
+    23:         <%= f.select :id, Search.find_users_searches %>
+    24:         <%= f.submit %>
+    25:     <% end %> 
+  
+app/views/searches/index.html.erb:22:in `_app_views_searches_index_html_erb___2730015875085847346_70108839808540'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:51:32 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.8ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:22
+  Rendered searches/index.html.erb within layouts/application (9451.6ms)
+Completed 500 Internal Server Error in 9457ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <% binding.pry %>
+    23:     <%= form_for(@searches[0]) do |f| %>
+    24:         <%= f.select :id, Search.find_users_searches %>
+    25:         <%= f.submit %>
+    26:     <% end %> 
+  
+app/views/searches/index.html.erb:23:in `_app_views_searches_index_html_erb___2730015875085847346_70108879528460'
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:51:48 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-12 11:51:49 -0700
+Started GET "/auth/stackexchange/callback?code=HPhojffeIRybPpXxDw822g))&state=1305fa2f62410940fbdd45cd7ddf182d44c5d165bdef1ec0" for ::1 at 2019-08-12 11:51:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"HPhojffeIRybPpXxDw822g))", "state"=>"1305fa2f62410940fbdd45cd7ddf182d44c5d165bdef1ec0", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 11:51:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:51:51 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.2ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:23
+  Rendered searches/index.html.erb within layouts/application (4798.8ms)
+Completed 500 Internal Server Error in 4803ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <% binding.pry %>
+    23:     <%= form_for(@searches[0]) do |f| %>
+    24:         <%= f.select :id, Search.find_users_searches %>
+    25:         <%= f.submit %>
+    26:     <% end %> 
+  
+app/views/searches/index.html.erb:23:in `_app_views_searches_index_html_erb___2730015875085847346_70108880239100'
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 11:52:00 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  Rendered searches/_form.html.erb (2.2ms)
+  Rendered searches/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:52:07 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VhW/6KeJV2VyhQxgXCrf+DOyTa0HH+qNFbVhhLebWmGXJ+WJklx0mKRfLhavxQBolSU4C5w7ERKBKYXvw21jkA==", "search"=>{"tags"=>["python", "dictionary", "sorting"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 613218], ["title", "How do I sort a dictionary by value?"], ["post_link", "https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 1], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:52:07.570258"], ["updated_at", "2019-08-12 18:52:07.570258"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 73050], ["title", "How do I sort a list of dictionaries by a value of the dictionary?"], ["post_link", "https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-a-value-of-the-dictionary"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 2], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:52:07.583940"], ["updated_at", "2019-08-12 18:52:07.583940"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 9001529], ["title", "How can I sort a dictionary by key?"], ["post_link", "https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 3], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:52:07.589394"], ["updated_at", "2019-08-12 18:52:07.589394"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 364599], ["title", "In Python, how do I iterate over a dictionary in sorted key order?"], ["post_link", "https://stackoverflow.com/questions/364519/in-python-how-do-i-iterate-over-a-dictionary-in-sorted-key-order"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 4], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:52:07.594591"], ["updated_at", "2019-08-12 18:52:07.594591"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 25480214], ["title", "Right way to initialize an OrderedDict using its constructor such that it retains order of initial data?"], ["post_link", "https://stackoverflow.com/questions/25480089/right-way-to-initialize-an-ordereddict-using-its-constructor-such-that-it-retain"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 5], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-12 18:52:07.600198"], ["updated_at", "2019-08-12 18:52:07.600198"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 288ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:52:07 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (1.0ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (6.0ms)
+  Rendered searches/index.html.erb within layouts/application (11406.4ms)
+Completed 500 Internal Server Error in 11412ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <% binding.pry %>
+    23:     <%= form_for(@searches[0]) do |f| %>
+    24:         <%= f.select :id, Search.find_users_searches %>
+    25:         <%= f.submit %>
+    26:     <% end %> 
+  
+app/views/searches/index.html.erb:23:in `_app_views_searches_index_html_erb___2730015875085847346_70108839065680'
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:52:37 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VhW/6KeJV2VyhQxgXCrf+DOyTa0HH+qNFbVhhLebWmGXJ+WJklx0mKRfLhavxQBolSU4C5w7ERKBKYXvw21jkA==", "search"=>{"tags"=>["ruby", "arrays", "object"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11272934], ["title", "How to sum properties of the objects within an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/11272929/how-to-sum-properties-of-the-objects-within-an-array-in-ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 11], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:52:37.522326"], ["updated_at", "2019-08-12 18:52:37.522326"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5196020], ["title", "Ruby: new array from one value in an array of objects"], ["post_link", "https://stackoverflow.com/questions/5195943/ruby-new-array-from-one-value-in-an-array-of-objects"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 13], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:52:37.535364"], ["updated_at", "2019-08-12 18:52:37.535364"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11468985], ["title", "Array.reject!, how does it work exactly?"], ["post_link", "https://stackoverflow.com/questions/11468001/array-reject-how-does-it-work-exactly"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 12], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:52:37.541226"], ["updated_at", "2019-08-12 18:52:37.541226"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5282859], ["title", "How to copy nested arrays and making sure that the copy is a complete dup of the original"], ["post_link", "https://stackoverflow.com/questions/5282850/how-to-copy-nested-arrays-and-making-sure-that-the-copy-is-a-complete-dup-of-the"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 16], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:52:37.546027"], ["updated_at", "2019-08-12 18:52:37.546027"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 6980066], ["title", "Ruby: Iterate through an array of objects, ignore items with duplicate attributes"], ["post_link", "https://stackoverflow.com/questions/6979708/ruby-iterate-through-an-array-of-objects-ignore-items-with-duplicate-attribute"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 17], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:52:37.551045"], ["updated_at", "2019-08-12 18:52:37.551045"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 258ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:52:37 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (1.2ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (10.1ms)
+  Rendered searches/index.html.erb within layouts/application (7268.0ms)
+Completed 500 Internal Server Error in 7272ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20: 
+    21: <% if !@searches.nil? %>
+    22:     <% binding.pry %>
+    23:     <%= form_for(@searches[0]) do |f| %>
+    24:         <%= f.select :id, Search.find_users_searches %>
+    25:         <%= f.submit %>
+    26:     <% end %> 
+  
+app/views/searches/index.html.erb:23:in `_app_views_searches_index_html_erb___2730015875085847346_70108879139500'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:52:54 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (10.2ms)
+  Rendered searches/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108864510080'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108844850340'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:53:37 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (3.4ms)
+  Rendered searches/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108839689520'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108843800920'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:53:39 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.1ms)
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (3.0ms)
+  Rendered searches/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108843964720'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108846324840'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:53:40 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  Rendered searches/_searches.html.erb (3.2ms)
+  Rendered searches/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <strong><p>Matches for answers with tags: <%=searches[0].tags%></p></strong>
+    2: <ol>
+    3:     <% searches.each do |search| %>
+    4:         <li><%= link_to search.answer.title, search.answer.post_link %></li>
+  
+app/views/searches/_searches.html.erb:1:in `_app_views_searches__searches_html_erb__350694489604857185_70108880168500'
+app/views/searches/index.html.erb:14:in `_app_views_searches_index_html_erb___2730015875085847346_70108880085300'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:54:02 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:13
+  Rendered searches/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:55:25 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:13
+  [1m[36mCACHE Search Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:21
+  Rendered searches/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 11:55:26 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.3ms)
+  Rendered searches/_form.html.erb (1.7ms)
+  Rendered searches/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:55:31 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"baG9Pd7gDhW7g4EwOa78L7B+yPEEbzcV/n6hjScdX0MHtvtCAkWK/APJQcTtd+Ie8SUBOpWURSKiW9+mLHslKQ==", "search"=>{"tags"=>["ruby", "arrays", "object"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11272934], ["title", "How to sum properties of the objects within an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/11272929/how-to-sum-properties-of-the-objects-within-an-array-in-ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 11], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:55:31.930880"], ["updated_at", "2019-08-12 18:55:31.930880"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5196020], ["title", "Ruby: new array from one value in an array of objects"], ["post_link", "https://stackoverflow.com/questions/5195943/ruby-new-array-from-one-value-in-an-array-of-objects"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 13], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:55:31.937934"], ["updated_at", "2019-08-12 18:55:31.937934"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11468985], ["title", "Array.reject!, how does it work exactly?"], ["post_link", "https://stackoverflow.com/questions/11468001/array-reject-how-does-it-work-exactly"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 12], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:55:31.944340"], ["updated_at", "2019-08-12 18:55:31.944340"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5282859], ["title", "How to copy nested arrays and making sure that the copy is a complete dup of the original"], ["post_link", "https://stackoverflow.com/questions/5282850/how-to-copy-nested-arrays-and-making-sure-that-the-copy-is-a-complete-dup-of-the"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 16], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:55:31.949815"], ["updated_at", "2019-08-12 18:55:31.949815"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 6980066], ["title", "Ruby: Iterate through an array of objects, ignore items with duplicate attributes"], ["post_link", "https://stackoverflow.com/questions/6979708/ruby-iterate-through-an-array-of-objects-ignore-items-with-duplicate-attribute"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 17], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:55:31.955313"], ["updated_at", "2019-08-12 18:55:31.955313"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 237ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:55:31 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:13
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:1
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/searches/_searches.html.erb:4
+  [1m[36mSearch Update All (3.0ms)[0m  [1m[33mUPDATE "searches" SET "user_id" = NULL WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/_searches.html.erb:8
+  Rendered searches/_searches.html.erb (11.9ms)
+  Rendered searches/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:56:06 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mCACHE Search Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:22
+  Rendered searches/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4/searches/new" for ::1 at 2019-08-12 11:56:08 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered searches/_form.html.erb (2.7ms)
+  Rendered searches/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:56:12 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5p4hqTeyZbm6ABgp8g16DvgKOUejyUiz1t7p/L7MJEOMiWfW6xfhUAJK2N0m1GQ/uVHwjDIyOoSK+5fXtapeKQ==", "search"=>{"tags"=>["ruby", "arrays", "object"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11272934], ["title", "How to sum properties of the objects within an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/11272929/how-to-sum-properties-of-the-objects-within-an-array-in-ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 11], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:56:12.929290"], ["updated_at", "2019-08-12 18:56:12.929290"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5196020], ["title", "Ruby: new array from one value in an array of objects"], ["post_link", "https://stackoverflow.com/questions/5195943/ruby-new-array-from-one-value-in-an-array-of-objects"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 13], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:56:12.942978"], ["updated_at", "2019-08-12 18:56:12.942978"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11468985], ["title", "Array.reject!, how does it work exactly?"], ["post_link", "https://stackoverflow.com/questions/11468001/array-reject-how-does-it-work-exactly"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 12], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:56:12.948462"], ["updated_at", "2019-08-12 18:56:12.948462"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5282859], ["title", "How to copy nested arrays and making sure that the copy is a complete dup of the original"], ["post_link", "https://stackoverflow.com/questions/5282850/how-to-copy-nested-arrays-and-making-sure-that-the-copy-is-a-complete-dup-of-the"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 16], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:56:12.955233"], ["updated_at", "2019-08-12 18:56:12.955233"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 6980066], ["title", "Ruby: Iterate through an array of objects, ignore items with duplicate attributes"], ["post_link", "https://stackoverflow.com/questions/6979708/ruby-iterate-through-an-array-of-objects-ignore-items-with-duplicate-attribute"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["answer_id", 17], ["tags", "[\"ruby\", \"arrays\", \"object\"]"], ["created_at", "2019-08-12 18:56:12.961304"], ["updated_at", "2019-08-12 18:56:12.961304"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 234ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:56:12 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Search::ActiveRecord_Associations_CollectionProxy:0x00007f86fe9ba848>
+Did you mean?  to_set
+               to_ary):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(@searches) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108886976940'
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:56:25 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mYX4pYj8GZuYpj0h8dGt1PMKU4FUazcoaSgWTU5v3/ZYt6LEvSk6Zk58H1cCPnJEVZ0mJ89PzLf9tPImOpnmBw==", "search"=>{"tags"=>["ruby", "arrays", "object"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11272934], ["title", "How to sum properties of the objects within an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/11272929/how-to-sum-properties-of-the-objects-within-an-array-in-ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5196020], ["title", "Ruby: new array from one value in an array of objects"], ["post_link", "https://stackoverflow.com/questions/5195943/ruby-new-array-from-one-value-in-an-array-of-objects"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11468985], ["title", "Array.reject!, how does it work exactly?"], ["post_link", "https://stackoverflow.com/questions/11468001/array-reject-how-does-it-work-exactly"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5282859], ["title", "How to copy nested arrays and making sure that the copy is a complete dup of the original"], ["post_link", "https://stackoverflow.com/questions/5282850/how-to-copy-nested-arrays-and-making-sure-that-the-copy-is-a-complete-dup-of-the"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 6980066], ["title", "Ruby: Iterate through an array of objects, ignore items with duplicate attributes"], ["post_link", "https://stackoverflow.com/questions/6979708/ruby-iterate-through-an-array-of-objects-ignore-items-with-duplicate-attribute"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 11]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 13]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 12]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 16]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 17]]
+  ↳ app/controllers/searches_controller.rb:55
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 211ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:56:25 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.7ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:13
+  Rendered searches/index.html.erb within layouts/application (139.8ms)
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86fdb8dc20>:0x00007f86fbee5938>
+Did you mean?  search_field_tag):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(@searches[0]) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108864505480'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:56:38 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Class:0x00007f86f8f67648>
+Did you mean?  to_query):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(Search) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108862741740'
+Started POST "/users/4/searches" for ::1 at 2019-08-12 11:56:43 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mYX4pYj8GZuYpj0h8dGt1PMKU4FUazcoaSgWTU5v3/ZYt6LEvSk6Zk58H1cCPnJEVZ0mJ89PzLf9tPImOpnmBw==", "search"=>{"tags"=>["ruby", "arrays", "object"]}, "commit"=>"Enter", "user_id"=>"4"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11272934], ["title", "How to sum properties of the objects within an array in Ruby"], ["post_link", "https://stackoverflow.com/questions/11272929/how-to-sum-properties-of-the-objects-within-an-array-in-ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5196020], ["title", "Ruby: new array from one value in an array of objects"], ["post_link", "https://stackoverflow.com/questions/5195943/ruby-new-array-from-one-value-in-an-array-of-objects"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 11468985], ["title", "Array.reject!, how does it work exactly?"], ["post_link", "https://stackoverflow.com/questions/11468001/array-reject-how-does-it-work-exactly"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 5282859], ["title", "How to copy nested arrays and making sure that the copy is a complete dup of the original"], ["post_link", "https://stackoverflow.com/questions/5282850/how-to-copy-nested-arrays-and-making-sure-that-the-copy-is-a-complete-dup-of-the"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 6980066], ["title", "Ruby: Iterate through an array of objects, ignore items with duplicate attributes"], ["post_link", "https://stackoverflow.com/questions/6979708/ruby-iterate-through-an-array-of-objects-ignore-items-with-duplicate-attribute"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 4], ["answer_id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 11]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 13]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 12]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 16]]
+  ↳ app/controllers/searches_controller.rb:55
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ?[0m  [["user_id", 4], ["answer_id", 17]]
+  ↳ app/controllers/searches_controller.rb:55
+Redirected to http://localhost:3000/users/4/searches
+Completed 302 Found in 207ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:56:43 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Class:0x00007f86f8f67648>
+Did you mean?  to_query):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(Search) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108877801200'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 11:59:34 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  [1m[36mSearch Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" ORDER BY "searches"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:13
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (208.5ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86fdb8dc20>:0x00007f86f8e9dd70>
+Did you mean?  search_field_tag):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(Search.last) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108839213480'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:00:25 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Search Load (0.0ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered searches/index.html.erb within layouts/application (220.8ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current' for #<#<Class:0x00007f86fdb8dc20>:0x00007f86fea08340>
+Did you mean?  current_user):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current-user.searches) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108887139800'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:00:40 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  ↳ /Users/bav/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered searches/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Search::ActiveRecord_Associations_CollectionProxy:0x00007f86f96f6580>
+Did you mean?  to_set
+               to_ary):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user.searches) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108843583480'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:00:54 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:13
+  Rendered searches/index.html.erb within layouts/application (128.6ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `search_path' for #<#<Class:0x00007f86fdb8dc20>:0x00007f86feb3cae0>
+Did you mean?  search_field_tag):
+    10: <div class="page">
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user.searches[0]) do |f| %>
+    14:             <% f.select :id, Searches.find_users_searches %>
+    15:             <% f.submit %>
+    16:         <% end %>
+  
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108887771560'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:02:56 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:37: syntax error, unexpected ensure, expecting end
+          ensure
+          ^~~~~~
+/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/views/searches/index.html.erb:39: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/searches/index.html.erb:37: syntax error, unexpected ensure, expecting end
+app/views/searches/index.html.erb:39: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:03:15 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<Class:0x00007f86f8f67648>
+Did you mean?  current_scope):
+    11: 
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user) do |f| %>
+    14:             <%= fields_for Search.find_users_searches do |ff| %>
+    15:             <% ff.select :id, Search.find_users_searches %>
+    16:             <% ff.submit %>
+    17:             <% end %>
+  
+app/models/search.rb:14:in `find_users_searches'
+app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108888496640'
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108888496640'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:03:58 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Class:0x00007f86ff00b2b0>
+Did you mean?  ids):
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user) do |f| %>
+    14:             <%= fields_for Search do |ff| %>
+    15:                 <% ff.select :id, Search.find_users_searches(current_user) %>
+    16:                 <% ff.submit %>
+    17:             <% end %>
+    18:         <% end %>
+  
+app/views/searches/index.html.erb:15:in `block (2 levels) in _app_views_searches_index_html_erb___2730015875085847346_70108880204180'
+app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108880204180'
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108880204180'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:04:22 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `answer_id' for #<Class:0x00007f86ff00b2b0>):
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user) do |f| %>
+    14:             <%= fields_for Search do |ff| %>
+    15:                 <% ff.select :answer_id, Search.find_users_searches(current_user) %>
+    16:                 <% ff.submit %>
+    17:             <% end %>
+    18:         <% end %>
+  
+app/views/searches/index.html.erb:15:in `block (2 levels) in _app_views_searches_index_html_erb___2730015875085847346_70108888136600'
+app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108888136600'
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108888136600'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:05:12 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  Rendered searches/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Class:0x00007f86ff00b2b0>
+Did you mean?  ids):
+    12:     <% if !@searches.empty? %>
+    13:         <%= form_for(current_user) do |f| %>
+    14:             <%= fields_for Search do |ff| %>
+    15:                 <% ff.select :id, Search.find_users_searches(current_user) %>
+    16:                 <% ff.submit %>
+    17:             <% end %>
+    18:         <% end %>
+  
+app/views/searches/index.html.erb:15:in `block (2 levels) in _app_views_searches_index_html_erb___2730015875085847346_70108886287240'
+app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108886287240'
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108886287240'
+Started GET "/users/4/searches" for ::1 at 2019-08-12 12:05:19 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/searches/index.html.erb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "searches"."id" FROM "searches"[0m
+  ↳ app/views/searches/index.html.erb:15
+  [1m[36mSearch Load (5.9ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/searches/index.html.erb:15
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "searches"."id" FROM "searches"[0m
+  ↳ app/views/searches/index.html.erb:15
+  Rendered searches/index.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for #<Class:0x00007f86ff00b2b0>):
+    13:         <%= form_for(current_user) do |f| %>
+    14:             <%= fields_for Search do |ff| %>
+    15:                 <% ff.select :ids , Search.find_users_searches(current_user) %>
+    16:                 <% ff.submit %>
+    17:             <% end %>
+    18:         <% end %>
+    19:     <% end %>
+  
+app/views/searches/index.html.erb:16:in `block (2 levels) in _app_views_searches_index_html_erb___2730015875085847346_70108888111060'
+app/views/searches/index.html.erb:14:in `block in _app_views_searches_index_html_erb___2730015875085847346_70108888111060'
+app/views/searches/index.html.erb:13:in `_app_views_searches_index_html_erb___2730015875085847346_70108888111060'
