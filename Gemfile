@@ -34,6 +34,9 @@ gem 'dotenv-rails'
 gem 'thin'
 # make basic HTTP requests to StackExchange API 
 gem 'httparty'
+gem 'bootstrap'
+gem 'jquery-rails'
+
 
 
 group :development, :test do
