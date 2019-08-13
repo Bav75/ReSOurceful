@@ -2,6 +2,7 @@
 <%# display navigation bar %>
 <%= render 'layouts/navigation' %>
 
+<%= render 'display' %>
 
 <%# display data validation errors if they exist %>
 <%= render 'layouts/validation_errors' %>
@@ -18,6 +19,8 @@
             <%= render 'searches', searches: @searches%>
         <% end %>
     <% end %>
-
 </div>
+
+
+
 
