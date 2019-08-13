@@ -7,4 +7,6 @@
 
 <%= render 'form', user: current_user %>
 
-<%= link_to "Delete account", current_user, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %>
+<div class="delete">
+    <%= link_to "Close your ReSOurceful account?", current_user, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %>
+</div>
