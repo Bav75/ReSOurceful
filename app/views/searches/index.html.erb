@@ -1,3 +1,4 @@
+<% binding.pry %>
 
 <%# display navigation bar %>
 <%= render 'layouts/navigation' %>
@@ -15,8 +16,8 @@
 <div class="page">
     <%# render partial for most recent search if redirected from a new search form %>
     <% if !request.referer.nil? %>
-        <% if request.referer.include?("/searches/new") && !@searches.empty? %>
-            <%= render 'searches', searches: @searches%>
+        <% if request.referer.include?("/searches/new") && !@recent_searches.nil? %>
+            <%= render 'searches', searches: @recent_searches%>
         <% end %>
     <% end %>
 </div>

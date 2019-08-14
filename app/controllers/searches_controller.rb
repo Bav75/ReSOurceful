@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
 require 'httparty'
     def index
+        binding.pry
         @searches = current_user.searches
     end
 
@@ -11,7 +12,7 @@ require 'httparty'
 
     def create
         tags = params[:search][:tags]
-        @searches = [] 
+        @recent_searches = [] 
         if tags.any? {|x| x.empty?}
             @user = current_user
             @search = Search.new 
@@ -47,13 +48,15 @@ require 'httparty'
                     else
                         search = Search.find_duplicates(answer, current_user)
                     end
-                    @searches << search
+                    @recent_searches << search
                     # binding.pry
                 end
                 # use request.referer
                 # flatten searches array before passing to index for rendering 
-                @searches.flatten! 
-                redirect_to user_searches_path
+                binding.pry
+                @recent_searches.flatten! 
+                render :index
+                # redirect_to user_searches_path
             end
         end
     end
