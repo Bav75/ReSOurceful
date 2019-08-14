@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
     has_secure_password 
 
     has_many :searches
@@ -9,7 +10,7 @@ class User < ApplicationRecord
     validates :password, presence: true 
     # validates :name, presence: true 
     validates :username, presence: true, uniqueness: true
-    
+
 
     def self.find_or_create_from_oauth(auth_hash)
         user = self.find_by(username: auth_hash['info']['nickname'])

@@ -17180,3 +17180,538 @@ Processing by SearchesController#create as HTML
 Completed 200 OK in 314ms (Views: 77.1ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/users/6/searches" for ::1 at 2019-08-13 18:51:57 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  [1m[36mSearch Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/searches/_display.html.erb:8
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (1.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  Rendered searches/_display.html.erb (62.8ms)
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  Rendered searches/index.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 571ms (Views: 529.6ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/users/6/searches" for ::1 at 2019-08-13 18:51:59 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/searches/_display.html.erb:8
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  Rendered searches/_display.html.erb (66.5ms)
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered searches/index.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 108ms (Views: 101.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/6" for ::1 at 2019-08-13 18:52:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.6ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6/searches" for ::1 at 2019-08-13 19:00:10 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+Started GET "/users/6/searches" for ::1 at 2019-08-13 19:01:10 -0700
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  [1m[36mSearch Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mSearch Load (1.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/searches/_display.html.erb:8
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  Rendered searches/_display.html.erb (49.7ms)
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  Rendered searches/index.html.erb within layouts/application (80223.0ms)
+Completed 200 OK in 80287ms (Views: 80259.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/users/6/searches" for ::1 at 2019-08-13 19:01:30 -0700
+Processing by SearchesController#index as HTML
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/searches/index.html.erb:1
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  [1m[36mSearch Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/searches/_display.html.erb:8
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (2.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:9
+  ↳ app/views/searches/_display.html.erb:9
+  Rendered searches/_display.html.erb (62.2ms)
+  Rendered searches/_display.html.erb (11331.9ms)
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered layouts/_validation_errors.html.erb (0.0ms)
+  Rendered searches/index.html.erb within layouts/application (127538.6ms)
+  Rendered searches/index.html.erb within layouts/application (127540.9ms)
+Completed 200 OK in 127660ms (Views: 127636.8ms | ActiveRecord: 5.0ms)
+
+
+Completed 200 OK in 127661ms (Views: 127639.2ms | ActiveRecord: 4.1ms)
+
+
+  [1m[36mUser Destroy (1.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-08-13 19:04:47 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 357ms (Views: 350.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:04:49 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:04:49 -0700
+Started GET "/auth/stackexchange/callback?code=eLrgJKjI(plkuiH2jvUQKw))&state=e674991eb4ada1e3c038cffb4d41351816ed8d9a594ddc5a" for ::1 at 2019-08-13 19:04:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"eLrgJKjI(plkuiH2jvUQKw))", "state"=>"e674991eb4ada1e3c038cffb4d41351816ed8d9a594ddc5a", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/user.rb:22:in `initialize'
+app/models/user.rb:30:in `find_or_create_from_oauth'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2019-08-13 19:06:37 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 388ms (Views: 383.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:06:39 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:06:39 -0700
+Started GET "/auth/stackexchange/callback?code=DJOHFQJcxzC9CepHxQxeBQ))&state=db5a60082f3bdd981549e9eb360490d8c3668e9e126216d6" for ::1 at 2019-08-13 19:06:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"DJOHFQJcxzC9CepHxQxeBQ))", "state"=>"db5a60082f3bdd981549e9eb360490d8c3668e9e126216d6", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Bav75"], ["password_digest", "$2a$12$o.gmAkMTJrvp8EkURlEltO6E715HZBdC3dJN4OJCDbz5Rhdt/wrQu"], ["created_at", "2019-08-14 02:06:40.570726"], ["updated_at", "2019-08-14 02:06:40.570726"]]
+  ↳ app/models/user.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 244ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/7" for ::1 at 2019-08-13 19:06:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 76ms (Views: 71.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/7/searches" for ::1 at 2019-08-13 19:06:42 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  [1m[36mSearch Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  Rendered searches/_display.html.erb (6.1ms)
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (3893.1ms)
+Completed 200 OK in 3945ms (Views: 3927.7ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-13 19:06:50 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"83Px1bEdHti6mX5UHTxhEk2M8faI6mGA2CyCstGCJlgskIbo86CUIE9p6JukD9pAoY+9rkbe1+pwqGp+KKKbZA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-13 19:06:50 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:08:39 -0700
+Started GET "/auth/stackexchange" for ::1 at 2019-08-13 19:08:39 -0700
+Started GET "/auth/stackexchange/callback?code=MZMvqMLquG2IMt9giU*Gww))&state=610462b5de92c9d8a14aece3f29e56aa6a96d1e0f40e2f1a" for ::1 at 2019-08-13 19:08:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"MZMvqMLquG2IMt9giU*Gww))", "state"=>"610462b5de92c9d8a14aece3f29e56aa6a96d1e0f40e2f1a", "provider"=>"stackexchange"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bav75"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for ::1 at 2019-08-13 19:08:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/7/searches" for ::1 at 2019-08-13 19:08:41 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  Rendered searches/_display.html.erb (2.1ms)
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered searches/index.html.erb within layouts/application (3757.1ms)
+Completed 200 OK in 3797ms (Views: 3790.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/7/searches/new" for ::1 at 2019-08-13 19:08:50 -0700
+Processing by SearchesController#new as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/new.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/_form.html.erb (8.5ms)
+  Rendered searches/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 80ms (Views: 67.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/7/searches" for ::1 at 2019-08-13 19:09:02 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bm/N4DG94yDnJCg2vwXz1mI+wy6H2H8EMDd7fDoavnU/54cCw4/Vu8of28eIyY3wm1cwQMZk9ZfW6+Ydfl6dKQ==", "search"=>{"tags"=>["python", "dictionary", "sorting"]}, "commit"=>"Enter", "user_id"=>"7"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 613218], ["title", "How do I sort a dictionary by value?"], ["post_link", "https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 7], ["answer_id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["answer_id", 23], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-14 02:09:03.245172"], ["updated_at", "2019-08-14 02:09:03.245172"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 73050], ["title", "How do I sort a list of dictionaries by a value of the dictionary?"], ["post_link", "https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-by-a-value-of-the-dictionary"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 7], ["answer_id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["answer_id", 24], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-14 02:09:03.250094"], ["updated_at", "2019-08-14 02:09:03.250094"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 9001529], ["title", "How can I sort a dictionary by key?"], ["post_link", "https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 7], ["answer_id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["answer_id", 25], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-14 02:09:03.256125"], ["updated_at", "2019-08-14 02:09:03.256125"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 364599], ["title", "In Python, how do I iterate over a dictionary in sorted key order?"], ["post_link", "https://stackoverflow.com/questions/364519/in-python-how-do-i-iterate-over-a-dictionary-in-sorted-key-order"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 7], ["answer_id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["answer_id", 26], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-14 02:09:03.260832"], ["updated_at", "2019-08-14 02:09:03.260832"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."accepted_answer_id" = ? AND "answers"."title" = ? AND "answers"."post_link" = ? LIMIT ?[0m  [["accepted_answer_id", 25480214], ["title", "Right way to initialize an OrderedDict using its constructor such that it retains order of initial data?"], ["post_link", "https://stackoverflow.com/questions/25480089/right-way-to-initialize-an-ordereddict-using-its-constructor-such-that-it-retain"], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:35
+  [1m[36mSearch Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? AND "searches"."answer_id" = ? LIMIT ?[0m  [["user_id", 7], ["answer_id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("user_id", "answer_id", "tags", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["answer_id", 27], ["tags", "[\"python\", \"dictionary\", \"sorting\"]"], ["created_at", "2019-08-14 02:09:03.266424"], ["updated_at", "2019-08-14 02:09:03.266424"]]
+  ↳ app/controllers/searches_controller.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/searches_controller.rb:46
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/views/searches/_display.html.erb:8
+  Rendered searches/_display.html.erb (3.6ms)
+  Rendered layouts/_validation_errors.html.erb (0.4ms)
+  Rendered searches/_searches.html.erb (0.8ms)
+  Rendered searches/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 322ms (Views: 40.4ms | ActiveRecord: 8.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-13 19:09:07 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GpndCp1yDjjO4dotd4g78YrDKZ7koKXz3B4iLdYoNTyB1n1Mfi+smXTYH4fNK16WCkaQ8mjpty0U5MGihXGUeA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-13 19:09:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
