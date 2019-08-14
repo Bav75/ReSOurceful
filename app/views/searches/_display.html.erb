@@ -2,10 +2,10 @@
     <div class="col-sm-4">
         <div class="sidebar">
             <% if !current_user.searches.empty? %>
-                <h3>View all searches</h3>
+                <h3>Your search history</h3>
                 <ol>
                 <% current_user.searches.each do |search| %>
-                    <li><%= search.answer.title %></li>
+                    <li><%= link_to search.answer.title, "#{search.answer.post_link + "/" + search.answer.accepted_answer_id.to_s + "#" + search.answer.accepted_answer_id.to_s}" %></li>
                 <% end %>
                 </ol>
             <% end %>

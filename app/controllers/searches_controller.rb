@@ -1,7 +1,6 @@
 class SearchesController < ApplicationController
 require 'httparty'
     def index
-        binding.pry
         @searches = current_user.searches
     end
 
@@ -53,7 +52,6 @@ require 'httparty'
                 end
                 # use request.referer
                 # flatten searches array before passing to index for rendering 
-                binding.pry
                 @recent_searches.flatten! 
                 render :index
                 # redirect_to user_searches_path
