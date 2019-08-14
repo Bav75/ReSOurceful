@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
     has_secure_password 
 
-    has_many :searches
+    has_many :searches, dependent: :destroy
     has_many :answers, through: :searches
 
     accepts_nested_attributes_for :searches
