@@ -2,13 +2,15 @@
     <div class="col-sm-4">
         <div class="sidebar">
             <div class="px-2">
-                <% if !current_user.searches.empty? %>
-                    <h3>Your search history</h3>
-                    <%= form_for(:search, url: '/show_answer') do |f| %>
-                        <%= f.collection_select :answer_id, Answer.find_user_answers(current_user.searches), :id, :title %>
-                        <%= f.submit "View answer" %>
+                <div class="mt-0">
+                    <% if !current_user.searches.empty? %>
+                        <h3>Your search history</h3>
+                        <%= form_for(:search, url: '/show_answer') do |f| %>
+                            <%= f.collection_select :answer_id, Answer.find_user_answers(current_user.searches), :id, :title %>
+                            <%= f.submit "View answer" %>
+                        <% end %>
                     <% end %>
-                <% end %>
+                </div>
             </div>
         </div>
     </div>
