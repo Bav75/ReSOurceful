@@ -60,3 +60,14 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.px-2 {
+	padding-left: (0) !important;
+	padding-right: ($spacer * 10) !important;
+}
+  
+
+
+// .sidebar {
+// 	left: 20;
+// }
