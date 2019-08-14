@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-    #stackexchange authentication
+
+  ###stackexchange authentication
   # get 'auth/stackexchange', to: 'sessions#new'
   get '/auth/:provider/callback', to: 'sessions#create'
 
@@ -19,5 +20,8 @@ Rails.application.routes.draw do
   resources :users do 
     resources :searches
   end
+
+  # resources :answers, only: [:show]
+  post '/show_answer', to: 'answers#show_answer'
 
 end

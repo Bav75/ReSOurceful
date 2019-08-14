@@ -18197,3 +18197,181 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/users/7/searches" for ::1 at 2019-08-14 09:58:28 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  [1m[36mSearch Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mAnswer Load (1.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" IN (SELECT "searches"."answer_id" FROM "searches" WHERE "searches"."user_id" = ?)[0m  [["user_id", 7]]
+  ↳ app/views/searches/_display.html.erb:8
+  Rendered searches/_display.html.erb (32.2ms)
+  Rendered layouts/_validation_errors.html.erb (1.5ms)
+  Rendered searches/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 476ms (Views: 431.8ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/users/7/searches" for ::1 at 2019-08-14 09:58:31 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0cUTYcm6VB/1AU6v4NhSUcNEFJhN/tBq+PgztKnpcDzTIFok3dYKu4sSirgfbj4urtRGsDfZKQ4lfaRNyYqjg==", "search"=>{"answer_id"=>"23"}, "commit"=>"View post", "user_id"=>"7"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `any?' for nil:NilClass):
+  
+app/controllers/searches_controller.rb:15:in `create'
+Started POST "/users/7/searches" for ::1 at 2019-08-14 09:58:46 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0cUTYcm6VB/1AU6v4NhSUcNEFJhN/tBq+PgztKnpcDzTIFok3dYKu4sSirgfbj4urtRGsDfZKQ4lfaRNyYqjg==", "search"=>{"answer_id"=>"23"}, "commit"=>"View post", "user_id"=>"7"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `any?' for nil:NilClass):
+  
+app/controllers/searches_controller.rb:15:in `create'
+Started POST "/users/7/searches" for ::1 at 2019-08-14 09:59:13 -0700
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0cUTYcm6VB/1AU6v4NhSUcNEFJhN/tBq+PgztKnpcDzTIFok3dYKu4sSirgfbj4urtRGsDfZKQ4lfaRNyYqjg==", "search"=>{"answer_id"=>"23"}, "commit"=>"View post", "user_id"=>"7"}
+Completed 500 Internal Server Error in 17497ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `any?' for nil:NilClass):
+  
+app/controllers/searches_controller.rb:16:in `create'
+Started GET "/users/7/searches" for ::1 at 2019-08-14 10:06:57 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bav/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  [1m[36mSearch Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  Rendered searches/_display.html.erb (7.5ms)
+  Rendered searches/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    4:             <div class="px-2">
+    5:                 <% if !current_user.searches.empty? %>
+    6:                     <h3>Your search history</h3>
+    7:                     <%= form_for(:search, url_for("search[answer_id]")) do |f| %>
+    8:                         <%= f.collection_select :answer_id, Answer.find_user_answers(current_user.searches), :id, :title %>
+    9:                         <%= f.submit "View post" %>
+   10:                     <% end %>
+  
+app/views/searches/_display.html.erb:7:in `_app_views_searches__display_html_erb__1869894518280062727_70210415894580'
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb__4228999020400079067_70210390784620'
+Started GET "/users/7/searches" for ::1 at 2019-08-14 10:09:49 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  [1m[36mSearch Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mAnswer Load (2.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" IN (SELECT "searches"."answer_id" FROM "searches" WHERE "searches"."user_id" = ?)[0m  [["user_id", 7]]
+  ↳ app/views/searches/_display.html.erb:8
+  Rendered searches/_display.html.erb (25.3ms)
+  Rendered layouts/_validation_errors.html.erb (0.9ms)
+  Rendered searches/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 397ms (Views: 376.0ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/show_post" for ::1 at 2019-08-14 10:09:53 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/show_post"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/show_post" for ::1 at 2019-08-14 10:10:13 -0700
+Processing by AnswersController#show_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GArkKae6/nFMIaidCyHAQI/smDiLnIrYIIvGsDCeS20UAXEMs+tPC93Z541U3xnxclrZcCp0FT2z/dDv1R/EIw==", "search"=>{"answer_id"=>"23"}, "commit"=>"View post"}
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ (pry):2
+No template found for AnswersController#show_post, rendering head :no_content
+Completed 204 No Content in 30175ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/7" for ::1 at 2019-08-14 10:10:46 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user_link.html.erb (1.7ms)
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 130ms (Views: 116.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/7/searches" for ::1 at 2019-08-14 10:13:27 -0700
+Processing by SearchesController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendering searches/index.html.erb within layouts/application
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  [1m[36mSearch Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "searches" WHERE "searches"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/searches/_display.html.erb:5
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" IN (SELECT "searches"."answer_id" FROM "searches" WHERE "searches"."user_id" = ?)[0m  [["user_id", 7]]
+  ↳ app/views/searches/_display.html.erb:8
+  Rendered searches/_display.html.erb (12.9ms)
+  Rendered layouts/_validation_errors.html.erb (0.5ms)
+  Rendered searches/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 120ms (Views: 73.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/show_answer" for ::1 at 2019-08-14 10:13:30 -0700
+  
+SyntaxError (/Users/bav/dev/flatiron/flatiron_projects/ReSOurceful/app/controllers/answers_controller.rb:7: syntax error, unexpected ':', expecting end
+        render: "#{answer.post_link + "/" + ...
+              ^):
+  
+app/controllers/answers_controller.rb:7: syntax error, unexpected ':', expecting end
+Started POST "/show_answer" for ::1 at 2019-08-14 10:15:01 -0700
+Processing by AnswersController#show_answer as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SZEAK3UBGtEqmExkW9RlqdypENZHJA97r2SUPMWDvhlFmpUOYVCrq7tgA3QEKrwYIR9RnubMkJ48EoJjIAIxVw==", "search"=>{"answer_id"=>"23"}, "commit"=>"View answer"}
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:5
+Redirected to https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value/613218#613218
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms)
+
+
