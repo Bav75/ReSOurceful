@@ -4,11 +4,10 @@
             <div class="px-2">
                 <% if !current_user.searches.empty? %>
                     <h3>Your search history</h3>
-                    <ol>
-                    <% current_user.searches.each do |search| %>
-                        <li><%= link_to search.answer.title, "#{search.answer.post_link + "/" + search.answer.accepted_answer_id.to_s + "#" + search.answer.accepted_answer_id.to_s}" %></li>
+                    <%= form_for :search do |f| %>
+                        <%= f.collection_select :answer_id, Answer.find_user_answers(current_user.searches), :id, :title %>
+                        <%= f.submit "View post" %>
                     <% end %>
-                    </ol>
                 <% end %>
             </div>
         </div>

@@ -10,9 +10,9 @@ class Search < ApplicationRecord
         self.where(user: user, answer: answer)
     end
 
-    def self.find_users_searches(user)
-        self.where(user: user)
-    end
+    # def self.find_users_searches(user)
+    #     self.where(user: user)
+    # end
 
 
 
